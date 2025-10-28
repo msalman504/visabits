@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact VisaBits - Get Your Visa Application Started</title>
-    <meta name="description" content="Contact VisaBits for professional visa services. WhatsApp +44 7412 855412 or email info@visabits.com. 97% approval rate for UK residents.">
+    <meta name="description" content="Contact VisaBits for professional visa services. WhatsApp +44 7412 855412 or email info@visabits.co.uk. 97% approval rate for UK residents.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,6 +20,7 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -93,7 +94,7 @@
                     <i class="fas fa-envelope text-4xl text-blue-600 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Email</h3>
                     <p class="text-gray-600 mb-4">Detailed inquiries and documentation</p>
-                    <a href="mailto:info@visabits.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
+                    <a href="mailto:info@visabits.co.uk" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
                         <i class="fas fa-envelope mr-2"></i> Send Email
                     </a>
                 </div>
@@ -120,7 +121,7 @@
                     <p class="text-lg text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
                 </div>
                 
-                <form class="space-y-6">
+                <form id="contactForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -185,6 +186,16 @@
                         </button>
                     </div>
                 </form>
+                
+                <div id="contactSuccessMessage" class="hidden mt-6 p-6 bg-green-50 border border-green-200 rounded-lg">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-600 text-2xl mr-3"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold text-green-800">Message Sent Successfully!</h3>
+                            <p class="text-green-700">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -235,7 +246,7 @@
                 <a href="https://wa.me/447412855412" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
                     <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
                 </a>
-                <a href="mailto:info@visabits.com" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
+                <a href="mailto:info@visabits.co.uk" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
                     <i class="fas fa-envelope mr-2"></i> Email Us
                 </a>
             </div>
@@ -273,7 +284,7 @@
                     <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
                     <div class="space-y-2">
                         <p class="text-gray-400"><i class="fab fa-whatsapp mr-2"></i> +44 7412 855412</p>
-                        <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@visabits.com</p>
+                        <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@visabits.co.uk</p>
                     </div>
                 </div>
             </div>
@@ -282,5 +293,67 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init('d4vq2T1Z9sGGy3Y11');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('contactSuccessMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData);
+                
+                // Show loading state
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // Create email content
+                const emailSubject = `Contact Form Inquiry from ${data.firstName} ${data.lastName}`;
+                
+                const emailData = {
+                    to_email: 'info@visabits.co.uk',
+                    subject: emailSubject,
+                    from_name: `${data.firstName} ${data.lastName}`,
+                    from_email: data.email,
+                    phone: data.phone || 'Not provided',
+                    visa_type: data.visaType || 'Not specified',
+                    destination: data.destination || 'Not specified',
+                    message: data.message,
+                    timestamp: new Date().toLocaleString(),
+                    reply_to: data.email,
+                    body: `Contact Form Submission\n\nName: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nVisa Type: ${data.visaType || 'Not specified'}\nDestination: ${data.destination || 'Not specified'}\n\nMessage:\n${data.message}\n\nSubmitted: ${new Date().toLocaleString()}`
+                };
+                
+                console.log('📧 Sending contact form email with data:', emailData);
+                
+                // Send email using EmailJS
+                emailjs.send('service_oofd1lj', 'template_qoo8l0g', emailData)
+                .then(function(response) {
+                    console.log('✅ Contact email sent successfully!', response.status, response.text);
+                    
+                    // Hide form and show success message
+                    contactForm.style.display = 'none';
+                    successMessage.classList.remove('hidden');
+                })
+                .catch(function(error) {
+                    console.log('❌ Contact email failed to send:', error);
+                    alert('Failed to send message. Please try again or contact us directly at info@visabits.co.uk');
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
