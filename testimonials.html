@@ -1,338 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials - VisaBits Success Stories</title>
-    <meta name="description" content="Read success stories from our satisfied clients. 1500+ successful visa applications with 97% approval rate.">
+    <meta name="description"
+        content="Read success stories from our satisfied clients. 1500+ successful visa applications with 97% approval rate.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#475569',
-                        'primary-light': '#64748b',
-                        'primary-dark': '#334155'
+                        primary: '#0f172a', // Deep Navy
+                        'primary-light': '#334155',
+                        'primary-dark': '#020617',
+                        accent: '#b45309', // Gold/Bronze
+                        'accent-light': '#d97706',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-gray-50">
+
+<body class="bg-slate-50 font-sans text-slate-800">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav
+        class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto">
-                    <span class="ml-2 text-2xl font-bold text-primary">VisaBits</span>
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center group cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="images/logo.jpg" alt="VisaBits Logo"
+                        class="h-10 w-auto group-hover:opacity-80 transition-opacity">
+                    <span
+                        class="ml-3 text-2xl font-bold font-serif text-primary tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                Countries <i class="fas fa-chevron-down ml-1"></i>
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Home</a>
+
+                        <!-- Mega Menu Dropdown -->
+                        <div class="relative">
+                            <button id="desktop-countries-btn"
+                                class="text-slate-600 hover:text-primary font-medium flex items-center transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">
+                                Countries <i class="fas fa-chevron-down ml-1 text-xs transition-transform"
+                                    id="desktop-countries-icon"></i>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <a href="countries/australia/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Australia</a>
-                                <a href="countries/usa/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">USA</a>
-                                <a href="countries/uk/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">UK</a>
-                                <a href="countries/canada/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Canada</a>
-                                <a href="countries/schengen/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Schengen</a>
+
+                            <!-- Dropdown Content -->
+                            <div id="desktop-countries-menu"
+                                class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-3xl bg-white rounded-xl shadow-2xl opacity-0 invisible transition-all duration-300 z-50 border border-slate-100 overflow-hidden top-full">
+                                <div class="grid grid-cols-3 gap-0 divide-x divide-slate-50">
+                                    <!-- Europe Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-blue-100 rounded-lg text-blue-600"><i
+                                                    class="fas fa-globe-europe"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Europe
+                                            </h3>
+                                        </div>
+
+                                        <!-- UK -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-gb text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">United Kingdom</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="countries/uk/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="countries/uk/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="countries/uk/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Schengen -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-eu text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Schengen</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="countries/schengen/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="countries/schengen/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="countries/schengen/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Americas Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-red-100 rounded-lg text-red-600"><i
+                                                    class="fas fa-globe-americas"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Americas</h3>
+                                        </div>
+
+                                        <!-- USA -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-us text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">USA</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="countries/usa/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="countries/usa/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="countries/usa/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Canada -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-ca text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Canada</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="countries/canada/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="countries/canada/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="countries/canada/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pacific Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-amber-100 rounded-lg text-amber-600"><i
+                                                    class="fas fa-sun"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Pacific</h3>
+                                        </div>
+
+                                        <!-- Australia -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-au text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Australia</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="countries/australia/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="countries/australia/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="countries/australia/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bottom Bar -->
+                                <div
+                                    class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-500 font-medium">Need help choosing?</span>
+                                    <a href="contact.html"
+                                        class="text-xs font-bold text-accent hover:text-accent-light flex items-center">
+                                        Book a Consultation <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="testimonials.html" class="text-primary px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
-                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+
+                        
+                        <a href="packages.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a><a href="about.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
+                        <a href="testimonials.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Testimonials</a>
+                        <a href="contact.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Contact</a>
                     </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-primary">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
+                        <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden border-t border-slate-100 bg-white absolute w-full shadow-xl max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
+
+                <div class="px-3 py-2">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
+
+                    <!-- UK Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-uk-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-gb mr-2 shadow-sm rounded-sm"></span> UK
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-uk-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/uk/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/uk/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/uk/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Schengen Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-schengen-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-schengen-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/schengen/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/schengen/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/schengen/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- USA Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-usa-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-us mr-2 shadow-sm rounded-sm"></span> USA
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-usa-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/usa/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/usa/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/usa/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Canada Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-canada-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-canada-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/canada/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/canada/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/canada/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Australia Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-australia-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-australia-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/australia/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/australia/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/australia/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <a href="packages.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a><a href="about.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
+                <a href="testimonials.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Testimonials</a>
+                <a href="contact.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Success Stories</h1>
-                <p class="text-xl md:text-2xl text-gray-200">Hear from our satisfied clients</p>
-            </div>
+    <section class="relative py-24 bg-primary overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('images/hero-bg.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80"></div>
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold font-serif text-white mb-6">Success Stories</h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">Join thousands of satisfied
+                clients who have successfully navigated their visa journeys with VisaBits.</p>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <section class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
                 <div class="p-6">
-                    <div class="text-4xl font-bold text-primary mb-2">1500+</div>
-                    <div class="text-gray-600">Happy Clients</div>
+                    <div class="text-5xl font-bold font-serif text-accent mb-2">1500+</div>
+                    <div class="text-slate-600 font-medium uppercase tracking-wide text-sm">Happy Clients</div>
                 </div>
                 <div class="p-6">
-                    <div class="text-4xl font-bold text-primary mb-2">97%</div>
-                    <div class="text-gray-600">Success Rate</div>
+                    <div class="text-5xl font-bold font-serif text-accent mb-2">97%</div>
+                    <div class="text-slate-600 font-medium uppercase tracking-wide text-sm">Approval Rate</div>
                 </div>
                 <div class="p-6">
-                    <div class="text-4xl font-bold text-primary mb-2">5★</div>
-                    <div class="text-gray-600">Average Rating</div>
+                    <div class="text-5xl font-bold font-serif text-accent mb-2">5★</div>
+                    <div class="text-slate-600 font-medium uppercase tracking-wide text-sm">Average Rating</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Grid -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-                <p class="text-lg text-gray-600">Real experiences from real people</p>
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-primary mb-4">What Our Clients Say</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Real experiences from real people who trusted us with their
+                    travel dreams.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/1.PNG" alt="Australia Tourist Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Priya Sharma</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Priya+Sharma&background=random" alt="Priya Sharma"
+                            class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Priya Sharma</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"VisaBits made my Australian tourist visa application so easy! The team was professional, responsive, and I got my visa approved in just 2 weeks. Highly recommended!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">Australia Tourist Visa</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/1.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"VisaBits made my Australian tourist visa
+                        application so easy! The team was professional, responsive, and I got my visa approved in just 2
+                        weeks. Highly recommended!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Australia
+                            Tourist Visa</span>
+                    </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/2.PNG" alt="USA Business Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Ahmed Hassan</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Ahmed+Hassan&background=random" alt="Ahmed Hassan"
+                            class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Ahmed Hassan</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Outstanding service for my US business visa. The payment after documentation policy gave me confidence, and the approval came through faster than expected. Will definitely use again!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">USA Business Visa</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/2.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Outstanding service for my US business visa.
+                        The payment after documentation policy gave me confidence, and the approval came through faster
+                        than expected. Will definitely use again!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">USA
+                            Business Visa</span>
+                    </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/3.PNG" alt="Schengen Cruise Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Fatima Al-Zahra</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Fatima+Al-Zahra&background=random"
+                            alt="Fatima Al-Zahra" class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Fatima Al-Zahra</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"The cruise visa process was seamless with VisaBits. They handled all the complex requirements for our Mediterranean cruise, and we had no issues at any port. Excellent service!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">Schengen Cruise Visa</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/3.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"The cruise visa process was seamless with
+                        VisaBits. They handled all the complex requirements for our Mediterranean cruise, and we had no
+                        issues at any port. Excellent service!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Schengen
+                            Cruise Visa</span>
+                    </div>
                 </div>
 
                 <!-- Testimonial 4 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/4.PNG" alt="Canada Tourist Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Raj Patel</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Raj+Patel&background=random" alt="Raj Patel"
+                            class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Raj Patel</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"I was skeptical about online visa services, but VisaBits exceeded all expectations. Clear communication, fast processing, and the 97% success rate is real. Thank you!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">Canada Tourist Visa</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/4.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"I was skeptical about online visa services,
+                        but VisaBits exceeded all expectations. Clear communication, fast processing, and the 97%
+                        approval rate is real. Thank you!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Canada
+                            Tourist Visa</span>
+                    </div>
                 </div>
 
                 <!-- Testimonial 5 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/5.PNG" alt="UK Business Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Aisha Khan</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Aisha+Khan&background=random" alt="Aisha Khan"
+                            class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Aisha Khan</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Professional, reliable, and trustworthy. VisaBits helped me get my UK business visa for an important conference. The team was available whenever I had questions. Highly professional service!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">UK Business Visa</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/5.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"Professional, reliable, and trustworthy.
+                        VisaBits helped me get my UK business visa for an important conference. The team was available
+                        whenever I had questions. Highly professional service!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">UK
+                            Business Visa</span>
+                    </div>
                 </div>
 
                 <!-- Testimonial 6 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                    <div class="text-center mb-4">
-                        <img src="images/testimonials/6.PNG" alt="Australia Tourist Visa Sticker" class="w-24 h-16 mx-auto rounded-lg object-cover shadow-md mb-3">
-                        <h3 class="text-lg font-semibold text-gray-900">Mohammed Benali</h3>
-                        <div class="flex text-yellow-400 justify-center">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-1 transition-transform duration-300 border border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Mohammed+Benali&background=random"
+                            alt="Mohammed Benali" class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-primary font-serif">Mohammed Benali</h3>
+                            <div class="flex text-accent text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"From start to finish, VisaBits made the entire process stress-free. Their expertise in visa requirements saved me time and money. I'll definitely recommend them to friends and family!"</p>
-                    <div class="mt-4 text-sm text-gray-500 text-center">Multiple Visa Types</div>
+                    <div class="mb-4 relative group cursor-pointer">
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm z-10 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> VERIFIED
+                        </div>
+                        <img src="images/testimonials/6.PNG" alt="Visa Proof"
+                            class="w-full h-32 object-cover rounded-lg border border-slate-100 shadow-sm group-hover:shadow-md transition-all duration-300">
+                        <p class="text-[10px] text-slate-400 text-center mt-1">Visa Grant Notice (Personal details
+                            hidden)</p>
+                    </div>
+                    <p class="text-slate-600 italic mb-6 leading-relaxed">"From start to finish, VisaBits made the
+                        entire process stress-free. Their expertise in visa requirements saved me time and money. I'll
+                        definitely recommend them to friends and family!"</p>
+                    <div class="pt-6 border-t border-slate-100">
+                        <span
+                            class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Multiple
+                            Visa Types</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Additional Testimonials Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">More Success Stories</h2>
-                <p class="text-lg text-gray-600">Read more about our clients' experiences</p>
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif text-primary mb-4">More Success Stories</h2>
+                <p class="text-slate-600">Read more about our clients' experiences</p>
             </div>
-            
+
             <div class="space-y-8">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-quote-left text-primary text-2xl"></i>
-                        </div>
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 relative">
+                    <i class="fas fa-quote-left text-accent/20 text-6xl absolute top-6 left-6 -z-0"></i>
+                    <div class="relative z-10 flex items-start">
                         <div class="ml-4">
-                            <p class="text-gray-700 italic mb-4">"I had a complex case with previous visa rejections, but VisaBits helped me understand what went wrong and guided me through a successful reapplication. Their expertise is unmatched!"</p>
+                            <p class="text-slate-700 italic mb-6 text-lg leading-relaxed">"I had a complex case with
+                                previous visa rejections, but VisaBits helped me understand what went wrong and guided
+                                me through a successful reapplication. Their expertise is unmatched!"</p>
                             <div class="flex items-center">
-                                <div class="flex text-yellow-400 mr-3">
+                                <div class="flex text-accent mr-3 text-sm">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="text-sm font-semibold text-gray-900">- Arjun Singh</span>
+                                <span class="text-sm font-bold text-primary font-serif">- Arjun Singh</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-quote-left text-primary text-2xl"></i>
-                        </div>
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 relative">
+                    <i class="fas fa-quote-left text-accent/20 text-6xl absolute top-6 left-6 -z-0"></i>
+                    <div class="relative z-10 flex items-start">
                         <div class="ml-4">
-                            <p class="text-gray-700 italic mb-4">"The WhatsApp support was incredibly helpful. I could get instant answers to my questions, and the team was always available. It made the whole process much less stressful."</p>
+                            <p class="text-slate-700 italic mb-6 text-lg leading-relaxed">"The WhatsApp support was
+                                incredibly helpful. I could get instant answers to my questions, and the team was always
+                                available. It made the whole process much less stressful."</p>
                             <div class="flex items-center">
-                                <div class="flex text-yellow-400 mr-3">
+                                <div class="flex text-accent mr-3 text-sm">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="text-sm font-semibold text-gray-900">- Zara Ahmed</span>
+                                <span class="text-sm font-bold text-primary font-serif">- Zara Ahmed</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-quote-left text-primary text-2xl"></i>
-                        </div>
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-100 relative">
+                    <i class="fas fa-quote-left text-accent/20 text-6xl absolute top-6 left-6 -z-0"></i>
+                    <div class="relative z-10 flex items-start">
                         <div class="ml-4">
-                            <p class="text-gray-700 italic mb-4">"As a business owner, I needed multiple visas for my team. VisaBits handled everything efficiently and kept me updated throughout. Their bulk processing service is excellent!"</p>
+                            <p class="text-slate-700 italic mb-6 text-lg leading-relaxed">"As a business owner, I needed
+                                multiple visas for my team. VisaBits handled everything efficiently and kept me updated
+                                throughout. Their bulk processing service is excellent!"</p>
                             <div class="flex items-center">
-                                <div class="flex text-yellow-400 mr-3">
+                                <div class="flex text-accent mr-3 text-sm">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="text-sm font-semibold text-gray-900">- Youssef Alaoui</span>
+                                <span class="text-sm font-bold text-primary font-serif">- Youssef Alaoui</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Join Our Success Stories?</h2>
-            <p class="text-xl mb-8 text-gray-200">Start your visa application journey today</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/447412855412" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
-                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
-                </a>
-                <a href="mailto:info@visabits.co.uk" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
-                    <i class="fas fa-envelope mr-2"></i> Email Us
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-primary-dark text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <img src="images/logo.jpg" alt="VisaBits Logo" class="h-8 w-auto">
-                        <span class="ml-2 text-xl font-bold">VisaBits</span>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto opacity-90 rounded">
+                        <span class="ml-3 text-2xl font-bold font-serif tracking-tight">VisaBits</span>
                     </div>
-                    <p class="text-gray-400">Professional visa services for UK residents with 97% approval rate.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Professional visa facilitation services for UK
+                        residents. We simplify global mobility with expertise and integrity.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/visa-bits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575915765867" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.instagram.com/visabits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="testimonials.html" class="text-gray-400 hover:text-white">Testimonials</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-slate-400 hover:text-accent transition-colors">About Us</a>
+                        </li>
+                        <li><a href="testimonials.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Client Success</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-accent transition-colors">Contact
+                                Support</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">Privacy Policy</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Visa Types</h3>
-                    <ul class="space-y-2">
-                        <li><a href="countries/australia/tourist.html" class="text-gray-400 hover:text-white">Tourist Visas</a></li>
-                        <li><a href="countries/usa/business.html" class="text-gray-400 hover:text-white">Business Visas</a></li>
-                        <li><a href="countries/uk/cruise.html" class="text-gray-400 hover:text-white">Cruise Visas</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Visa Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="countries/australia/tourist.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Australia Visas</a></li>
+                        <li><a href="countries/usa/business.html"
+                                class="text-slate-400 hover:text-accent transition-colors">USA Business Visas</a></li>
+                        <li><a href="countries/uk/cruise.html"
+                                class="text-slate-400 hover:text-accent transition-colors">UK Cruise Visas</a></li>
+                        <li><a href="countries/schengen/tourist.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Schengen Visas</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <div class="space-y-2">
-                        <p class="text-gray-400"><i class="fab fa-whatsapp mr-2"></i> +44 7412 855412</p>
-                        <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@visabits.co.uk</p>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Contact Us</h3>
+                    <div class="space-y-4">
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-accent"></i>
+                            <span>+44 7412 855412<br><span class="text-xs text-slate-500">Available 24/7</span></span>
+                        </p>
+                        <p class="text-slate-400 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <a href="mailto:info@visabits.co.uk"
+                                class="hover:text-white transition-colors">info@visabits.co.uk</a>
+                        </p>
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>London, United Kingdom<br><span class="text-xs text-slate-500">Serving clients
+                                    nationwide</span></span>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 VisaBits. All rights reserved.</p>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-slate-500 text-sm">&copy; 2024 VisaBits. All rights reserved. Registered in England &
+                    Wales.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+            if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenuIcon.className = 'fas fa-bars text-xl';
+                    } else {
+                        mobileMenuIcon.className = 'fas fa-times text-xl';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            const desktopBtn = document.getElementById('desktop-countries-btn');
+            const desktopMenu = document.getElementById('desktop-countries-menu');
+            const desktopIcon = document.getElementById('desktop-countries-icon');
+
+            if (desktopBtn && desktopMenu && desktopIcon) {
+                desktopBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    desktopMenu.classList.toggle('opacity-0');
+                    desktopMenu.classList.toggle('invisible');
+                    desktopIcon.classList.toggle('rotate-180');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!desktopBtn.contains(e.target) && !desktopMenu.contains(e.target)) {
+                        desktopMenu.classList.add('opacity-0');
+                        desktopMenu.classList.add('invisible');
+                        desktopIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Mobile Accordion Toggle
+            const mobileCountryBtns = document.querySelectorAll('.mobile-country-btn');
+            mobileCountryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetMenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.fa-chevron-down');
+
+                    if (targetMenu) {
+                        targetMenu.classList.toggle('hidden');
+                        if (icon) {
+                            icon.classList.toggle('rotate-180');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

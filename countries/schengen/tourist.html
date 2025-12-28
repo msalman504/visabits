@@ -1,273 +1,491 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schengen Tourist Visa - VisaBits Professional Services</title>
-    <meta name="description" content="Complete guide to Schengen tourist visas for UK residents. Expert assistance with applications for multiple European countries. 97% success rate.">
+    <title>Schengen Tourist Visa - VisaBits Premium Services</title>
+    <meta name="description"
+        content="Expert assistance for Schengen Tourist Visas. Access 29 European countries with a single visa. We simplify the application process for UK residents.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#475569',
-                        'primary-light': '#64748b',
-                        'primary-dark': '#334155'
+                        primary: '#0f172a', // Deep Navy
+                        'primary-light': '#334155',
+                        'primary-dark': '#020617',
+                        accent: '#b45309', // Gold/Bronze
+                        'accent-light': '#d97706',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-accent/20 selection:text-primary">
+                    <!-- Navigation -->
+    <nav
+        class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto">
-                    <span class="ml-2 text-2xl font-bold text-primary">VisaBits</span>
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center group cursor-pointer" onclick="window.location.href='../../index.html'">
+                    <img src="../../images/logo.jpg" alt="VisaBits Logo"
+                        class="h-10 w-auto group-hover:opacity-80 transition-opacity">
+                    <span
+                        class="ml-3 text-2xl font-bold font-serif text-primary tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="../../index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                Countries <i class="fas fa-chevron-down ml-1"></i>
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="../../index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Home</a>
+
+                        <!-- Mega Menu Dropdown -->
+                        <div class="relative">
+                            <button id="desktop-countries-btn"
+                                class="text-slate-600 hover:text-primary font-medium flex items-center transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">
+                                Countries <i class="fas fa-chevron-down ml-1 text-xs transition-transform"
+                                    id="desktop-countries-icon"></i>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <a href="../australia/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Australia</a>
-                                <a href="../usa/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">USA</a>
-                                <a href="../uk/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">UK</a>
-                                <a href="../canada/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Canada</a>
-                                <a href="tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 bg-gray-50">Schengen</a>
+
+                            <!-- Dropdown Content -->
+                            <div id="desktop-countries-menu"
+                                class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-3xl bg-white rounded-xl shadow-2xl opacity-0 invisible transition-all duration-300 z-50 border border-slate-100 overflow-hidden top-full">
+                                <div class="grid grid-cols-3 gap-0 divide-x divide-slate-50">
+                                    <!-- Europe Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-blue-100 rounded-lg text-blue-600"><i
+                                                    class="fas fa-globe-europe"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Europe
+                                            </h3>
+                                        </div>
+
+                                        <!-- UK -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-gb text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">United Kingdom</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/uk/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/uk/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/uk/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Schengen -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-eu text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Schengen</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/schengen/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/schengen/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/schengen/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Americas Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-red-100 rounded-lg text-red-600"><i
+                                                    class="fas fa-globe-americas"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Americas</h3>
+                                        </div>
+
+                                        <!-- USA -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-us text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">USA</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/usa/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/usa/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/usa/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Canada -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-ca text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Canada</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/canada/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/canada/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/canada/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pacific Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-amber-100 rounded-lg text-amber-600"><i
+                                                    class="fas fa-sun"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Pacific</h3>
+                                        </div>
+
+                                        <!-- Australia -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-au text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Australia</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/australia/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/australia/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/australia/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bottom Bar -->
+                                <div
+                                    class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-500 font-medium">Need help choosing?</span>
+                                    <a href="../../contact.html"
+                                        class="text-xs font-bold text-accent hover:text-accent-light flex items-center">
+                                        Book a Consultation <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <a href="../../about.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="../../testimonials.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
-                        <a href="../../contact.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+
+                        
+                        <a href="../../packages.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a><a href="../../about.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
+                        <a href="../../testimonials.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Testimonials</a>
+                        <a href="../../contact.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Contact</a>
                     </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-primary">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
+                        <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden border-t border-slate-100 bg-white absolute w-full shadow-xl max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../../index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
+
+                <div class="px-3 py-2">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
+
+                    <!-- UK Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-uk-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-gb mr-2 shadow-sm rounded-sm"></span> UK
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-uk-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/uk/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/uk/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/uk/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Schengen Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-schengen-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-schengen-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/schengen/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/schengen/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/schengen/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- USA Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-usa-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-us mr-2 shadow-sm rounded-sm"></span> USA
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-usa-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/usa/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/usa/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/usa/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Canada Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-canada-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-canada-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/canada/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/canada/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/canada/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Australia Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-australia-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-australia-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/australia/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/australia/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/australia/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <a href="../../packages.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a><a href="../../about.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
+                <a href="../../testimonials.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Testimonials</a>
+                <a href="../../contact.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Schengen Tourist Visa</h1>
-                <p class="text-xl md:text-2xl text-gray-200">Explore 26 European countries with one visa</p>
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-[url('../../images/countries/schengen.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/60 to-primary/90 z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div
+                class="inline-block bg-accent/20 backdrop-blur-md border border-accent/30 text-accent-light px-6 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in-up">
+                <span class="mr-2">★</span> 29 Countries. One Visa.
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold font-serif text-white mb-8 leading-tight shadow-sm">
+                Experience <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-white to-yellow-400">Europe</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+                Travel freely across the Schengen Area. We handle the complex paperwork so you can plan your itinerary.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#pricing"
+                    class="bg-accent hover:bg-accent-light text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1">
+                    Start Application
+                </a>
+                <a href="#countries"
+                    class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg">
+                    View Countries
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Stats Bar -->
+        <div
+            class="absolute bottom-0 left-0 w-full bg-white/5 backdrop-blur-md border-t border-white/10 py-6 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-4 gap-8 text-white divide-x divide-white/10">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">90 Days</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Max Stay</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">29</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Countries</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">97%</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Success Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">Expert</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Guidance</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Visa Overview -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Schengen Short-Stay Visa</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        The Schengen visa allows you to visit 26 European countries for tourism, business, or visiting family and friends. UK residents need this visa for stays up to 90 days in any 180-day period.
+                    <span class="text-accent font-bold tracking-widest uppercase text-sm">Short-Stay Visa (Type
+                        C)</span>
+                    <h2 class="text-4xl font-bold font-serif text-primary mt-2 mb-6">Your Key to Europe</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        The Schengen Visa is one of the most powerful travel documents, allowing you to visit 29
+                        European countries without internal border checks. Whether for tourism, family visits, or short
+                        courses, this visa covers it all.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
-                            <span class="text-gray-700">Valid for up to 90 days within 180 days</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
-                            <span class="text-gray-700">Multiple or single entry options</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
-                            <span class="text-gray-700">Valid for all 26 Schengen countries</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
-                            <span class="text-gray-700">Processing time: 15 calendar days</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img src="../../images/visas/schengen-tourist.jpg" alt="Schengen Tourist Visa" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                    <p class="text-sm text-gray-500 mt-4">Sample Schengen tourist visa</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Schengen Countries -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Schengen Countries</h2>
-                <p class="text-lg text-gray-600">One visa covers all these destinations</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Austria</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Belgium</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Czech Republic</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Denmark</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Estonia</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Finland</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">France</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Germany</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Greece</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Hungary</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Iceland</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Italy</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Latvia</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Liechtenstein</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Lithuania</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Luxembourg</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Malta</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Netherlands</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Norway</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Poland</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Portugal</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Slovakia</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Slovenia</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Spain</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Sweden</div>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow text-center">
-                    <div class="text-sm font-semibold text-gray-900">Switzerland</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Required Documents -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Required Documents</h2>
-                <p class="text-lg text-gray-600">Complete checklist for your Schengen visa application</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Essential Documents</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-passport text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Valid UK Passport</h4>
-                                <p class="text-gray-600 text-sm">Must be valid for at least 3 months beyond intended departure from Schengen area</p>
+                    <div class="space-y-6">
+                        <div class="flex group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-globe-europe text-accent text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Freedom of Movement</h3>
+                                <p class="text-slate-600">Travel by train, car, or plane between member states
+                                    seamlessly.</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-id-card text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Passport Photos</h4>
-                                <p class="text-gray-600 text-sm">Two recent photos meeting Schengen specifications (35x45mm)</p>
+                        <div class="flex group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-clock text-accent text-xl"></i>
                             </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-file-alt text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Completed Application Form</h4>
-                                <p class="text-gray-600 text-sm">Schengen visa application form</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-calendar text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Travel Insurance</h4>
-                                <p class="text-gray-600 text-sm">Minimum €30,000 coverage for medical emergencies</p>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Flexible Duration</h3>
+                                <p class="text-slate-600">Stay up to 90 days within any 180-day period. Multiple entry
+                                    visas available.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-green-50 border border-green-200 rounded-lg p-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Supporting Documents</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-plane text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Flight Reservations</h4>
-                                <p class="text-gray-600 text-sm">Round-trip flight bookings or detailed itinerary</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-bed text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Accommodation Proof</h4>
-                                <p class="text-gray-600 text-sm">Hotel bookings or invitation letters</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-pound-sign text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Financial Evidence</h4>
-                                <p class="text-gray-600 text-sm">Bank statements showing sufficient funds</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-home text-primary text-xl mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Proof of Ties to UK</h4>
-                                <p class="text-gray-600 text-sm">Employment letter, property ownership, etc.</p>
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-tr from-accent/20 to-primary/20 rounded-2xl blur-lg opacity-70">
+                    </div>
+                    <div class="relative bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-xl">
+                        <h3 class="text-2xl font-bold text-primary mb-6 font-serif">Key Requirements</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Valid Passport (issued < 10
+                                    years ago) </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Travel Insurance (€30k coverage)
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Proof of Accommodation
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Proof of Financial Means
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Round-trip Flight Itinerary
+                            </li>
+                        </ul>
+                        <div class="mt-8 pt-8 border-t border-slate-200">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-500">Need help with documents?</p>
+                                    <p class="font-bold text-primary">We review everything.</p>
+                                </div>
+                                <a href="https://wa.me/447412855412"
+                                    class="bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-lg transition-colors">
+                                    Chat Now
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -276,94 +494,207 @@
         </div>
     </section>
 
-    <!-- Application Process -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Application Process</h2>
-                <p class="text-lg text-gray-600">Step-by-step guide to your Schengen visa</p>
+    <!-- Countries Grid -->
+    <section id="countries" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif text-primary mb-4">Where Can You Go?</h2>
+                <p class="text-lg text-slate-600">One visa opens the door to all these destinations.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Choose Embassy</h3>
-                    <p class="text-gray-600 text-sm">Apply to the embassy of your main destination or first entry point</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
+                <!-- Just a few key ones for visual appeal, list can be exhaustive if needed but keeping it clean -->
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇫🇷</span> France
                 </div>
-                
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete Application</h3>
-                    <p class="text-gray-600 text-sm">Fill out the application form and gather all required documents</p>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇩🇪</span> Germany
                 </div>
-                
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Book Appointment</h3>
-                    <p class="text-gray-600 text-sm">Schedule an appointment at the relevant embassy or consulate</p>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇮🇹</span> Italy
                 </div>
-                
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Submit & Collect</h3>
-                    <p class="text-gray-600 text-sm">Submit documents, pay fees, and collect your visa when ready</p>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇪🇸</span> Spain
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇳🇱</span> Netherlands
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇨🇭</span> Switzerland
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇬🇷</span> Greece
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇵🇹</span> Portugal
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇦🇹</span> Austria
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇧🇪</span> Belgium
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇸🇪</span> Sweden
+                </div>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                    <span class="text-2xl mr-2">🇳🇴</span> Norway
+                </div>
+            </div>
+            <p class="text-center text-slate-500 mt-8 text-sm italic">And many more including Denmark, Finland, Poland,
+                Czech Republic, Hungary, etc.</p>
+        </div>
+    </section>
+
+    <!-- Visual Process Section -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../../images/pattern.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm">The VisaBits Way</span>
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-white mt-3 mb-6">Simple 4-Step Process</h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">Schengen rules are strict. We ensure your
+                    application is flawless.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary-light via-accent to-primary-light -translate-y-1/2 rounded-full opacity-30">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Step 1 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:scale-110 transition-transform">
+                                1</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Strategy</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">We determine the correct embassy to
+                                apply to based on your itinerary to avoid rejection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                2</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Preparation</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">We complete the forms and audit your
+                                documents (insurance, flights, hotels) for compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                3</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Appointment</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">We book your appointment. You attend
+                                to submit biometrics (fingerprints).</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                4</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Approval</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">Collect your passport with the visa
+                                and get ready for your European trip.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Processing Times & Fees -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Processing Times & Fees</h2>
-                <p class="text-lg text-gray-600">Transparent pricing and processing information</p>
+    <!-- Premium Pricing Section -->
+    <section id="pricing" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-serif text-primary mb-4">Transparent Investment</h2>
+                <p class="text-xl text-slate-600">Professional service for a complex process.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Processing Times</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Standard Processing</span>
-                            <span class="font-semibold text-primary">15 calendar days</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Express Processing</span>
-                            <span class="font-semibold text-primary">5-7 calendar days</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">Peak Season</span>
-                            <span class="font-semibold text-primary">Up to 30 calendar days</span>
+
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                    <!-- Left Side: Features -->
+                    <div class="p-10 md:w-2/3">
+                        <div
+                            class="inline-block bg-primary/10 text-primary font-bold px-4 py-1 rounded-full text-sm mb-6">
+                            FULL SERVICE PACKAGE</div>
+                        <h3 class="text-3xl font-bold text-primary mb-6 font-serif">Schengen Tourist Visa</h3>
+                        <p class="text-slate-600 mb-8 leading-relaxed">We handle the stress of embassy slots and strict
+                            documentation requirements.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Embassy Selection</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Form Completion</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Document Audit</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Appointment Booking</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Flight/Hotel Advice</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">24/7 Support</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Fees</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Schengen Visa Fee</span>
-                            <span class="font-semibold text-primary">€80</span>
+
+                    <!-- Right Side: Price & CTA -->
+                    <div
+                        class="bg-primary p-10 md:w-1/3 flex flex-col justify-center text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-light/50 to-transparent"></div>
+                        <div class="relative z-10">
+                            <div class="text-slate-300 text-sm uppercase tracking-widest mb-2">Service Fee</div>
+                            <div class="text-5xl font-bold text-white mb-2 font-serif">£250</div>
+                            <div class="text-accent text-sm font-bold mb-8">+ Govt Fees (~€80)</div>
+
+                            <a href="https://wa.me/447412855412"
+                                class="block w-full bg-accent hover:bg-accent-light text-white py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 mb-4">
+                                Start Now
+                            </a>
+                            <p class="text-xs text-slate-400">Express appointments available (extra cost)</p>
                         </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">VisaBits Complete Service</span>
-                            <span class="font-semibold text-primary">£250</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="text-gray-700">Express Processing</span>
-                            <span class="font-semibold text-primary">+£45</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3">
-                            <span class="text-gray-700">Total (Standard)</span>
-                            <span class="font-semibold text-primary text-lg">£250 + €80</span>
-                        </div>
-                    </div>
-                    <div class="mt-4 p-4 bg-blue-50 rounded-lg">
-                        <p class="text-sm text-blue-800">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            <strong>£250 includes:</strong> VisaBits service fee + document review + application preparation + embassy appointment booking
-                        </p>
                     </div>
                 </div>
             </div>
@@ -371,97 +702,180 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-lg text-gray-600">Common questions about Schengen visas</p>
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif text-primary mb-4">Common Questions</h2>
+                <p class="text-lg text-slate-600">Expert answers to your Schengen visa queries</p>
             </div>
-            
+
             <div class="space-y-6">
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Which embassy should I apply to?</h3>
-                    <p class="text-gray-600">Apply to the embassy of your main destination (longest stay) or the first country you'll enter if staying equal time in multiple countries.</p>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">Which embassy should I apply to?</h3>
+                    <p class="text-slate-600 leading-relaxed">You must apply to the embassy of the country where you
+                        will spend the most days. If spending equal time, apply to the country of first entry.</p>
                 </div>
-                
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">How long can I stay with a Schengen visa?</h3>
-                    <p class="text-gray-600">You can stay up to 90 days within any 180-day period. This means you can visit multiple times as long as you don't exceed 90 days in total within 180 days.</p>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">How long does it take?</h3>
+                    <p class="text-slate-600 leading-relaxed">Standard processing is 15 calendar days after the
+                        appointment. However, getting an appointment slot can sometimes take weeks, so apply early.</p>
                 </div>
-                
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Do I need separate visas for each country?</h3>
-                    <p class="text-gray-600">No, one Schengen visa allows you to visit all 26 Schengen countries. You don't need separate visas for each destination.</p>
-                </div>
-                
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my visa application is rejected?</h3>
-                    <p class="text-gray-600">While our success rate is 97%, if your application is rejected, we'll help you understand the reasons and guide you through a reapplication process at no additional cost.</p>
-                </div>
-                
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I extend my Schengen visa?</h3>
-                    <p class="text-gray-600">Extensions are rarely granted and only in exceptional circumstances. It's better to apply for the correct duration initially.</p>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">Do I need to book flights before applying?</h3>
+                    <p class="text-slate-600 leading-relaxed">Yes, most embassies require proof of round-trip flight
+                        reservation and accommodation for the entire stay. We can advise on how to do this safely.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Apply for Your Schengen Visa?</h2>
-            <p class="text-xl mb-8 text-gray-200">Let our experts handle your application with 97% success rate</p>
+    <section class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('../../images/hero-bg.png')] bg-cover bg-center"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold font-serif mb-6">Ready for Europe?</h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Start your application today and let us handle the paperwork.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/447412855412" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
-                    <i class="fab fa-whatsapp mr-2"></i> Start Application
+                <a href="https://wa.me/447412855412"
+                    class="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
                 </a>
-                <a href="mailto:info@visabits.co.uk" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
-                    <i class="fas fa-envelope mr-2"></i> Get Quote
+                <a href="mailto:info@visabits.co.uk"
+                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-primary-dark text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-8 w-auto">
-                        <span class="ml-2 text-xl font-bold">VisaBits</span>
+                    <div class="flex items-center mb-6">
+                        <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto opacity-90 rounded">
+                        <span class="ml-3 text-2xl font-bold font-serif tracking-tight">VisaBits</span>
                     </div>
-                    <p class="text-gray-400">Professional visa services for UK residents with 97% approval rate.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Professional visa facilitation services for UK
+                        residents. We simplify global mobility with expertise and integrity.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/visa-bits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575915765867" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.instagram.com/visabits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="../../about.html" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="../../testimonials.html" class="text-gray-400 hover:text-white">Testimonials</a></li>
-                        <li><a href="../../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../../about.html" class="text-slate-400 hover:text-accent transition-colors">About
+                                Us</a></li>
+                        <li><a href="../../testimonials.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Client Success</a></li>
+                        <li><a href="../../contact.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">Privacy Policy</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Schengen Visas</h3>
-                    <ul class="space-y-2">
-                        <li><a href="tourist.html" class="text-gray-400 hover:text-white">Tourist Visa</a></li>
-                        <li><a href="business.html" class="text-gray-400 hover:text-white">Business Visa</a></li>
-                        <li><a href="cruise.html" class="text-gray-400 hover:text-white">Cruise Visa</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Schengen Visas</h3>
+                    <ul class="space-y-3">
+                        <li><a href="tourist.html" class="text-slate-400 hover:text-accent transition-colors">Tourist
+                                Visa</a></li>
+                        <li><a href="business.html" class="text-slate-400 hover:text-accent transition-colors">Business
+                                Visa</a></li>
+                        <li><a href="cruise.html" class="text-slate-400 hover:text-accent transition-colors">Cruise
+                                Visa</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <div class="space-y-2">
-                        <p class="text-gray-400"><i class="fab fa-whatsapp mr-2"></i> +44 7412 855412</p>
-                        <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@visabits.co.uk</p>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Contact Us</h3>
+                    <div class="space-y-4">
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-accent"></i>
+                            <span>+44 7412 855412<br><span class="text-xs text-slate-500">Available 24/7</span></span>
+                        </p>
+                        <p class="text-slate-400 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <a href="mailto:info@visabits.co.uk"
+                                class="hover:text-white transition-colors">info@visabits.co.uk</a>
+                        </p>
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>London, United Kingdom<br><span class="text-xs text-slate-500">Serving clients
+                                    nationwide</span></span>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 VisaBits. All rights reserved.</p>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-slate-500 text-sm">&copy; 2024 VisaBits. All rights reserved. Registered in England &
+                    Wales.</p>
             </div>
         </div>
     </footer>
+
+                    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+            if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenuIcon.className = 'fas fa-bars text-xl';
+                    } else {
+                        mobileMenuIcon.className = 'fas fa-times text-xl';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            const desktopBtn = document.getElementById('desktop-countries-btn');
+            const desktopMenu = document.getElementById('desktop-countries-menu');
+            const desktopIcon = document.getElementById('desktop-countries-icon');
+
+            if (desktopBtn && desktopMenu && desktopIcon) {
+                desktopBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    desktopMenu.classList.toggle('opacity-0');
+                    desktopMenu.classList.toggle('invisible');
+                    desktopIcon.classList.toggle('rotate-180');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!desktopBtn.contains(e.target) && !desktopMenu.contains(e.target)) {
+                        desktopMenu.classList.add('opacity-0');
+                        desktopMenu.classList.add('invisible');
+                        desktopIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Mobile Accordion Toggle
+            const mobileCountryBtns = document.querySelectorAll('.mobile-country-btn');
+            mobileCountryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetMenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.fa-chevron-down');
+
+                    if (targetMenu) {
+                        targetMenu.classList.toggle('hidden');
+                        if (icon) {
+                            icon.classList.toggle('rotate-180');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

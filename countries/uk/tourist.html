@@ -1,229 +1,490 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UK Tourist Visa - VisaBits Professional Services</title>
-    <meta name="description" content="Complete guide to UK tourist visa for international travelers. Expert assistance with Standard Visitor visa applications, requirements, and processing. 97% success rate.">
+    <title>UK Tourist Visa (Standard Visitor) - VisaBits Premium Services</title>
+    <meta name="description"
+        content="Expert assistance for UK Standard Visitor visas. We handle the entire application process, including document checking and appointment booking for a stress-free experience.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#475569',
-                        'primary-light': '#64748b',
-                        'primary-dark': '#334155'
+                        primary: '#0f172a', // Deep Navy
+                        'primary-light': '#334155',
+                        'primary-dark': '#020617',
+                        accent: '#b45309', // Gold/Bronze
+                        'accent-light': '#d97706',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-accent/20 selection:text-primary">
+                    <!-- Navigation -->
+    <nav
+        class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto">
-                    <span class="ml-2 text-2xl font-bold text-primary">VisaBits</span>
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center group cursor-pointer" onclick="window.location.href='../../index.html'">
+                    <img src="../../images/logo.jpg" alt="VisaBits Logo"
+                        class="h-10 w-auto group-hover:opacity-80 transition-opacity">
+                    <span
+                        class="ml-3 text-2xl font-bold font-serif text-primary tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="../../index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                Countries <i class="fas fa-chevron-down ml-1"></i>
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="../../index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Home</a>
+
+                        <!-- Mega Menu Dropdown -->
+                        <div class="relative">
+                            <button id="desktop-countries-btn"
+                                class="text-slate-600 hover:text-primary font-medium flex items-center transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">
+                                Countries <i class="fas fa-chevron-down ml-1 text-xs transition-transform"
+                                    id="desktop-countries-icon"></i>
                             </button>
-                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <a href="../australia/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Australia</a>
-                                <a href="../usa/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">USA</a>
-                                <a href="tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 bg-gray-50">UK</a>
-                                <a href="../canada/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Canada</a>
-                                <a href="../schengen/tourist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Schengen</a>
+
+                            <!-- Dropdown Content -->
+                            <div id="desktop-countries-menu"
+                                class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-3xl bg-white rounded-xl shadow-2xl opacity-0 invisible transition-all duration-300 z-50 border border-slate-100 overflow-hidden top-full">
+                                <div class="grid grid-cols-3 gap-0 divide-x divide-slate-50">
+                                    <!-- Europe Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-blue-100 rounded-lg text-blue-600"><i
+                                                    class="fas fa-globe-europe"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Europe
+                                            </h3>
+                                        </div>
+
+                                        <!-- UK -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-gb text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">United Kingdom</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/uk/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/uk/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/uk/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Schengen -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-eu text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Schengen</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/schengen/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/schengen/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/schengen/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Americas Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-red-100 rounded-lg text-red-600"><i
+                                                    class="fas fa-globe-americas"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Americas</h3>
+                                        </div>
+
+                                        <!-- USA -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-us text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">USA</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/usa/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/usa/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/usa/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Canada -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-ca text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Canada</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/canada/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/canada/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/canada/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pacific Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-amber-100 rounded-lg text-amber-600"><i
+                                                    class="fas fa-sun"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                                Pacific</h3>
+                                        </div>
+
+                                        <!-- Australia -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span
+                                                    class="flag-icon flag-icon-au text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Australia</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../../countries/australia/tourist.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Tourist
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/australia/business.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Business
+                                                        Visa</a></li>
+                                                <li><a href="../../countries/australia/cruise.html"
+                                                        class="text-sm text-slate-500 hover:text-accent block py-1 transition-colors">Cruise
+                                                        Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bottom Bar -->
+                                <div
+                                    class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-500 font-medium">Need help choosing?</span>
+                                    <a href="../../contact.html"
+                                        class="text-xs font-bold text-accent hover:text-accent-light flex items-center">
+                                        Book a Consultation <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <a href="../../about.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="../../testimonials.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
-                        <a href="../../contact.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+
+                        
+                        <a href="../../packages.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a><a href="../../about.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
+                        <a href="../../testimonials.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Testimonials</a>
+                        <a href="../../contact.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Contact</a>
                     </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-primary">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
+                        <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden border-t border-slate-100 bg-white absolute w-full shadow-xl max-h-[80vh] overflow-y-auto">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../../index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
+
+                <div class="px-3 py-2">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
+
+                    <!-- UK Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-uk-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-gb mr-2 shadow-sm rounded-sm"></span> UK
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-uk-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/uk/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/uk/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/uk/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Schengen Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-schengen-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-schengen-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/schengen/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/schengen/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/schengen/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- USA Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-usa-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-us mr-2 shadow-sm rounded-sm"></span> USA
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-usa-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/usa/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/usa/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/usa/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Canada Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-canada-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-canada-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/canada/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/canada/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/canada/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Australia Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-australia-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-australia-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../../countries/australia/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="../../countries/australia/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="../../countries/australia/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <a href="../../packages.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a><a href="../../about.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
+                <a href="../../testimonials.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Testimonials</a>
+                <a href="../../contact.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="mb-6">
-                <span class="inline-block bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                    🇬🇧 United Kingdom Visa Services
-                </span>
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-[url('../../images/countries/uk.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/60 to-primary/90 z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div
+                class="inline-block bg-accent/20 backdrop-blur-md border border-accent/30 text-accent-light px-6 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in-up">
+                <span class="mr-2">★</span> Discover Great Britain
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">UK Standard Visitor Visa</h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-                Explore the United Kingdom with confidence. From London's historic streets to Scotland's highlands, 
-                we'll help you secure your UK tourist visa efficiently.
+            <h1 class="text-5xl md:text-7xl font-bold font-serif text-white mb-8 leading-tight shadow-sm">
+                Experience the Royal <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-blue-500">United
+                    Kingdom</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+                Expert guidance for your Standard Visitor Visa. From London's history to the Scottish Highlands, we make
+                your journey seamless.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/447412855412" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                    <i class="fab fa-whatsapp mr-2"></i> Get Free Assessment
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#pricing"
+                    class="bg-accent hover:bg-accent-light text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1">
+                    Start Application
                 </a>
-                <a href="#requirements" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
-                    View Requirements
+                <a href="#eligibility"
+                    class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg">
+                    Check Eligibility
                 </a>
             </div>
         </div>
-    </section>
 
-    <!-- Quick Stats -->
-    <section class="bg-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl font-bold text-primary mb-2">3-6</div>
-                    <div class="text-gray-600">Weeks Processing</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-primary mb-2">£115</div>
-                    <div class="text-gray-600">Government Fee</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-primary mb-2">6</div>
-                    <div class="text-gray-600">Months Stay</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-primary mb-2">97%</div>
-                    <div class="text-gray-600">Success Rate</div>
+        <!-- Floating Stats Bar -->
+        <div
+            class="absolute bottom-0 left-0 w-full bg-white/5 backdrop-blur-md border-t border-white/10 py-6 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-4 gap-8 text-white divide-x divide-white/10">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">6 Months</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Stay Per Visit</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">3-6 Weeks</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Processing Time</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">97%</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Success Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold font-serif text-accent">Expert</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 mt-1">Document Check</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Visa Overview -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About UK Tourist Visa</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    The UK Standard Visitor visa allows you to visit the United Kingdom for tourism, visiting family and friends, 
-                    or short business trips for up to 6 months.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <div class="text-center">
-                        <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-plane text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Tourism & Leisure</h3>
-                        <p class="text-gray-600">Visit famous landmarks, museums, and explore the rich history and culture of England, Scotland, Wales, and Northern Ireland.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <div class="text-center">
-                        <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-users text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Family Visits</h3>
-                        <p class="text-gray-600">Reunite with family and friends living in the UK. Perfect for special occasions, holidays, and quality time together.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <div class="text-center">
-                        <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-briefcase text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Business Activities</h3>
-                        <p class="text-gray-600">Attend meetings, conferences, or conduct business activities. Note: You cannot work or receive payment from UK sources.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Eligibility Requirements -->
-    <section id="requirements" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Eligibility Requirements</h2>
-                <p class="text-xl text-gray-600">Ensure you meet all requirements before applying for your UK tourist visa</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section id="eligibility" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-primary">General Requirements</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Valid Passport</h4>
-                                <p class="text-gray-600">Must be valid for at least 6 months beyond your intended stay</p>
+                    <span class="text-accent font-bold tracking-widest uppercase text-sm">Standard Visitor Visa</span>
+                    <h2 class="text-4xl font-bold font-serif text-primary mt-2 mb-6">Your Gateway to the UK</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        The UK Standard Visitor Visa is versatile, allowing you to visit for tourism, family, or
+                        short-term business. Our experts ensure your application demonstrates strong ties to your home
+                        country, a key factor for approval.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-landmark text-accent text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Tourism & History</h3>
+                                <p class="text-slate-600">Visit world-class museums, historic castles, and vibrant
+                                    cities across England, Scotland, Wales, and Northern Ireland.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Sufficient Funds</h4>
-                                <p class="text-gray-600">Bank statements showing you can support yourself during your stay</p>
+                        <div class="flex group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-user-friends text-accent text-xl"></i>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Return Ticket</h4>
-                                <p class="text-gray-600">Proof of onward travel or return ticket</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Accommodation</h4>
-                                <p class="text-gray-600">Hotel bookings or invitation letter from UK host</p>
+                            <div class="ml-6">
+                                <h3 class="text-xl font-bold text-primary mb-2">Family & Friends</h3>
+                                <p class="text-slate-600">Reunite with loved ones. We help you present the correct
+                                    sponsorship or invitation documents.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-primary">Additional Considerations</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Travel History</h4>
-                                <p class="text-gray-600">Previous travel to UK or other countries strengthens your application</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Ties to Home Country</h4>
-                                <p class="text-gray-600">Employment, property, or family ties showing you'll return home</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Purpose of Visit</h4>
-                                <p class="text-gray-600">Clear explanation of your travel plans and activities in the UK</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold">Health Requirements</h4>
-                                <p class="text-gray-600">TB test may be required depending on your country of residence</p>
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-tr from-accent/20 to-primary/20 rounded-2xl blur-lg opacity-70">
+                    </div>
+                    <div class="relative bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-xl">
+                        <h3 class="text-2xl font-bold text-primary mb-6 font-serif">Key Requirements</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Valid Passport (6+ months
+                                validity)
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Proof of Funds (Bank Statements)
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Proof of Employment/Ties to Home
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i> Accommodation Details
+                            </li>
+                        </ul>
+                        <div class="mt-8 pt-8 border-t border-slate-200">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-500">Unsure about documents?</p>
+                                    <p class="font-bold text-primary">Get a free assessment</p>
+                                </div>
+                                <a href="https://wa.me/447412855412"
+                                    class="bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-lg transition-colors">
+                                    Chat Now
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -232,241 +493,194 @@
         </div>
     </section>
 
-    <!-- Required Documents -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Required Documents</h2>
-                <p class="text-xl text-gray-600">Complete checklist of documents needed for your UK tourist visa application</p>
+    <!-- Visual Process Section -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../../images/pattern.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm">The VisaBits Way</span>
+                <h2 class="text-4xl md:text-5xl font-bold font-serif text-white mt-3 mb-6">Simple 4-Step Process</h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">We navigate the UK government portal so you don't
+                    have to.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-primary">Personal Documents</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-passport text-primary mr-3"></i>
-                            <span>Valid passport (6+ months)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-id-card text-primary mr-3"></i>
-                            <span>Passport photos (2 recent)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-file-alt text-primary mr-3"></i>
-                            <span>Completed application form</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-calendar text-primary mr-3"></i>
-                            <span>Travel itinerary</span>
-                        </li>
-                    </ul>
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary-light via-accent to-primary-light -translate-y-1/2 rounded-full opacity-30">
                 </div>
 
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-primary">Financial Documents</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-university text-primary mr-3"></i>
-                            <span>Bank statements (3-6 months)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-pound-sign text-primary mr-3"></i>
-                            <span>Salary slips/employment letter</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-home text-primary mr-3"></i>
-                            <span>Property ownership documents</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-credit-card text-primary mr-3"></i>
-                            <span>Credit card statements</span>
-                        </li>
-                    </ul>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Step 1 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:scale-110 transition-transform">
+                                1</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Online Application</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">We complete the detailed online form,
+                                ensuring all answers match your documents.</p>
+                        </div>
+                    </div>
 
-                <div class="bg-white rounded-lg p-6 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-4 text-primary">Travel Documents</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-plane text-primary mr-3"></i>
-                            <span>Flight booking confirmation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-bed text-primary mr-3"></i>
-                            <span>Hotel booking confirmation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-shield-alt text-primary mr-3"></i>
-                            <span>Travel insurance certificate</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope text-primary mr-3"></i>
-                            <span>Invitation letter (if applicable)</span>
-                        </li>
-                    </ul>
+                    <!-- Step 2 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                2</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Document Upload</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">We scan and upload your documents to
+                                the UKVI portal in the correct format.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                3</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Biometrics</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">Attend your appointment to provide
+                                fingerprints and photo. We book the slot for you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative group">
+                        <div
+                            class="bg-primary-dark border border-white/10 rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 relative z-10 h-full">
+                            <div
+                                class="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg mx-auto group-hover:bg-white/10 transition-colors">
+                                4</div>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center">Visa Granted</h3>
+                            <p class="text-slate-400 text-center leading-relaxed">Receive your passport with the visa
+                                vignette and prepare for your trip.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Process -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Application Process</h2>
-                <p class="text-xl text-gray-600">Step-by-step guide to applying for your UK tourist visa</p>
+    <!-- Premium Pricing Section -->
+    <section id="pricing" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-serif text-primary mb-4">Transparent Investment</h2>
+                <p class="text-xl text-slate-600">Professional service for a hassle-free application.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-                    <h3 class="text-xl font-semibold mb-3">Online Application</h3>
-                    <p class="text-gray-600">Complete the online visa application form on the UK government website</p>
-                </div>
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                    <!-- Left Side: Features -->
+                    <div class="p-10 md:w-2/3">
+                        <div
+                            class="inline-block bg-primary/10 text-primary font-bold px-4 py-1 rounded-full text-sm mb-6">
+                            FULL SERVICE PACKAGE</div>
+                        <h3 class="text-3xl font-bold text-primary mb-6 font-serif">UK Standard Visitor Visa</h3>
+                        <p class="text-slate-600 mb-8 leading-relaxed">We handle the complexities of the UK immigration
+                            rules so you don't have to worry about a refusal.</p>
 
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                    <h3 class="text-xl font-semibold mb-3">Book Appointment</h3>
-                    <p class="text-gray-600">Schedule an appointment at your nearest UK visa application center</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                    <h3 class="text-xl font-semibold mb-3">Submit Documents</h3>
-                    <p class="text-gray-600">Attend your appointment and submit all required documents and biometrics</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-                    <h3 class="text-xl font-semibold mb-3">Receive Decision</h3>
-                    <p class="text-gray-600">Wait for processing and collect your passport with visa decision</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Processing Times & Fees -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Processing Times & Fees</h2>
-                <p class="text-xl text-gray-600">Transparent pricing and realistic timelines for your UK visa application</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6 text-primary">Processing Times</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Standard Processing</span>
-                            <span class="text-primary font-semibold">3-6 weeks</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Priority Processing</span>
-                            <span class="text-primary font-semibold">5 working days</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Super Priority</span>
-                            <span class="text-primary font-semibold">24 hours</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3">
-                            <span class="font-medium">Peak Season</span>
-                            <span class="text-amber-600 font-semibold">+2-4 weeks</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Application Completion</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Document Scanning</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Appointment Booking</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Cover Letter Drafting</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">Sponsorship Advice</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-slate-700 font-medium">24/7 Support</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6 text-primary">Fee Structure</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Government Application Fee</span>
-                            <span class="text-primary font-semibold">£115</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Priority Service</span>
-                            <span class="text-primary font-semibold">£220</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <span class="font-medium">Super Priority</span>
-                            <span class="text-primary font-semibold">£956</span>
-                        </div>
-                        <div class="flex justify-between items-center py-3">
-                            <span class="font-medium">VisaBits Complete Service</span>
-                            <span class="text-primary font-semibold">£250</span>
+                    <!-- Right Side: Price & CTA -->
+                    <div
+                        class="bg-primary p-10 md:w-1/3 flex flex-col justify-center text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-light/50 to-transparent"></div>
+                        <div class="relative z-10">
+                            <div class="text-slate-300 text-sm uppercase tracking-widest mb-2">Service Fee</div>
+                            <div class="text-5xl font-bold text-white mb-2 font-serif">£250</div>
+                            <div class="text-accent text-sm font-bold mb-8">+ £115 Govt Fee</div>
+
+                            <a href="https://wa.me/447412855412"
+                                class="block w-full bg-accent hover:bg-accent-light text-white py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 mb-4">
+                                Start Now
+                            </a>
+                            <p class="text-xs text-slate-400">Secure payment. No hidden costs.</p>
                         </div>
                     </div>
-                    <div class="mt-4 p-4 bg-blue-50 rounded-lg">
-                        <p class="text-sm text-blue-800">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            <strong>£250 includes:</strong> VisaBits service fee + government application fee + document review + online submission
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <div class="bg-primary bg-opacity-10 rounded-lg p-6 max-w-2xl mx-auto">
-                    <h3 class="text-xl font-semibold mb-2 text-primary">No Upfront Payment</h3>
-                    <p class="text-gray-600">Pay only after document verification. We're confident in our service quality.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600">Common questions about UK tourist visa applications</p>
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold font-serif text-primary mb-4">Common Questions</h2>
+                <p class="text-lg text-slate-600">Expert answers to your UK visa queries</p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
-                <div class="space-y-6">
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">How long can I stay in the UK on a tourist visa?</h3>
-                        <p class="text-gray-600">The Standard Visitor visa allows you to stay in the UK for up to 6 months. You can apply for longer stays in certain circumstances, but this requires additional documentation.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Can I work on a UK tourist visa?</h3>
-                        <p class="text-gray-600">No, the Standard Visitor visa does not allow you to work, study, or receive payment from UK sources. You can only engage in business activities like attending meetings or conferences.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Do I need travel insurance for the UK?</h3>
-                        <p class="text-gray-600">While not mandatory, comprehensive travel insurance is highly recommended. The UK has excellent healthcare, but medical costs can be expensive for visitors without insurance.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Can I extend my UK tourist visa?</h3>
-                        <p class="text-gray-600">Extensions are possible in exceptional circumstances, but you must apply before your current visa expires. You'll need to provide strong reasons and additional documentation.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">What if my visa application is refused?</h3>
-                        <p class="text-gray-600">If your application is refused, you'll receive a detailed explanation. You can reapply addressing the concerns raised, or appeal the decision if you believe it was made in error.</p>
-                    </div>
+            <div class="space-y-6">
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">How long does it take?</h3>
+                    <p class="text-slate-600 leading-relaxed">Standard processing is currently 3-6 weeks from your
+                        biometric appointment. Priority services (5 days) and Super Priority (24 hours) are available
+                        for an additional fee.</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">Can I work in the UK?</h3>
+                    <p class="text-slate-600 leading-relaxed">No, the Standard Visitor Visa strictly prohibits paid or
+                        unpaid work. You can attend meetings and conferences, but you cannot be employed.</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-primary mb-3">What if I have been refused before?</h3>
+                    <p class="text-slate-600 leading-relaxed">We specialize in complex cases. If you have a previous
+                        refusal, we will analyze the reasons and help you prepare a stronger application that addresses
+                        the concerns.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Explore the UK?</h2>
-            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Let our experts handle your UK tourist visa application. With a 97% success rate and comprehensive support, 
-                we'll make your British adventure a reality.
+    <section class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('../../images/hero-bg.png')] bg-cover bg-center"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold font-serif mb-6">Ready for London?</h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Start your application today and let us handle the paperwork.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/447412855412" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                    <i class="fab fa-whatsapp mr-2"></i> Start Your Application
+                <a href="https://wa.me/447412855412"
+                    class="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
                 </a>
-                <a href="mailto:info@visabits.co.uk" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-colors">
+                <a href="mailto:info@visabits.co.uk"
+                    class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
                     <i class="fas fa-envelope mr-2"></i> Email Us
                 </a>
             </div>
@@ -474,55 +688,131 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-primary-dark text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-8 w-auto">
-                        <span class="ml-2 text-xl font-bold">VisaBits</span>
+                    <div class="flex items-center mb-6">
+                        <img src="../../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto opacity-90 rounded">
+                        <span class="ml-3 text-2xl font-bold font-serif tracking-tight">VisaBits</span>
                     </div>
-                    <p class="text-gray-400 mb-4">Your trusted visa partner for seamless travel experiences.</p>
+                    <p class="text-slate-400 leading-relaxed mb-6">Professional visa facilitation services for UK
+                        residents. We simplify global mobility with expertise and integrity.</p>
                     <div class="flex space-x-4">
-                        <a href="https://wa.me/447412855412" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                        <a href="mailto:info@visabits.co.uk" class="text-gray-400 hover:text-white">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
+                        <a href="https://www.linkedin.com/company/visa-bits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575915765867" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.instagram.com/visabits/" class="text-slate-400 hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../australia/tourist.html" class="hover:text-white">Australia Visas</a></li>
-                        <li><a href="../usa/tourist.html" class="hover:text-white">USA Visas</a></li>
-                        <li><a href="tourist.html" class="hover:text-white">UK Visas</a></li>
-                        <li><a href="../canada/tourist.html" class="hover:text-white">Canada Visas</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../../about.html" class="text-slate-400 hover:text-accent transition-colors">About
+                                Us</a></li>
+                        <li><a href="../../testimonials.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Client Success</a></li>
+                        <li><a href="../../contact.html"
+                                class="text-slate-400 hover:text-accent transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">Privacy Policy</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../../about.html" class="hover:text-white">About Us</a></li>
-                        <li><a href="../../testimonials.html" class="hover:text-white">Testimonials</a></li>
-                        <li><a href="../../contact.html" class="hover:text-white">Contact</a></li>
-                        <li><a href="../../blog/index.html" class="hover:text-white">Blog</a></li>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">UK Visas</h3>
+                    <ul class="space-y-3">
+                        <li><a href="tourist.html" class="text-slate-400 hover:text-accent transition-colors">Tourist
+                                Visa</a></li>
+                        <li><a href="business.html" class="text-slate-400 hover:text-accent transition-colors">Business
+                                Visa</a></li>
+                        <li><a href="cruise.html" class="text-slate-400 hover:text-accent transition-colors">Cruise
+                                Visa</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fab fa-whatsapp mr-2"></i>+44 7412 855412</li>
-                        <li><i class="fas fa-envelope mr-2"></i>info@visabits.co.uk</li>
-                        <li><i class="fas fa-clock mr-2"></i>24/7 Support</li>
-                    </ul>
+                    <h3 class="text-lg font-bold mb-6 text-white font-serif">Contact Us</h3>
+                    <div class="space-y-4">
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-accent"></i>
+                            <span>+44 7412 855412<br><span class="text-xs text-slate-500">Available 24/7</span></span>
+                        </p>
+                        <p class="text-slate-400 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <a href="mailto:info@visabits.co.uk"
+                                class="hover:text-white transition-colors">info@visabits.co.uk</a>
+                        </p>
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>London, United Kingdom<br><span class="text-xs text-slate-500">Serving clients
+                                    nationwide</span></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 VisaBits. All rights reserved.</p>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-slate-500 text-sm">&copy; 2024 VisaBits. All rights reserved. Registered in England &
+                    Wales.</p>
             </div>
         </div>
     </footer>
+
+                    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+            if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenuIcon.className = 'fas fa-bars text-xl';
+                    } else {
+                        mobileMenuIcon.className = 'fas fa-times text-xl';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            const desktopBtn = document.getElementById('desktop-countries-btn');
+            const desktopMenu = document.getElementById('desktop-countries-menu');
+            const desktopIcon = document.getElementById('desktop-countries-icon');
+
+            if (desktopBtn && desktopMenu && desktopIcon) {
+                desktopBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    desktopMenu.classList.toggle('opacity-0');
+                    desktopMenu.classList.toggle('invisible');
+                    desktopIcon.classList.toggle('rotate-180');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!desktopBtn.contains(e.target) && !desktopMenu.contains(e.target)) {
+                        desktopMenu.classList.add('opacity-0');
+                        desktopMenu.classList.add('invisible');
+                        desktopIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Mobile Accordion Toggle
+            const mobileCountryBtns = document.querySelectorAll('.mobile-country-btn');
+            mobileCountryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetMenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.fa-chevron-down');
+
+                    if (targetMenu) {
+                        targetMenu.classList.toggle('hidden');
+                        if (icon) {
+                            icon.classList.toggle('rotate-180');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
