@@ -7,6 +7,13 @@
     <title>VisaBits - Professional Visa Services | Tourist, Business & Cruise Visas</title>
     <meta name="description"
         content="Professional visa services for UK residents. 1500+ successful applications with 97% approval rate. Tourist, business, and cruise visas for multiple countries. Payment after documentation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -364,6 +371,10 @@
                             </div>
                         </div>
 
+                        <a href="blog/index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Blogs</a>
+                        <a href="partners.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Partners</a>
                         <a href="about.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
                         <a href="testimonials.html"
@@ -493,6 +504,10 @@
                     </div>
                 </div>
 
+                <a href="blog/index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Blogs</a>
+                <a href="partners.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Partners</a>
                 <a href="about.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
                 <a href="testimonials.html"
@@ -504,125 +519,185 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center py-20 lg:py-32 overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0 bg-[url('images/hero-bg.png')] bg-cover bg-center lg:bg-right"></div>
-        <div
-            class="absolute inset-0 z-0 bg-gradient-to-b lg:bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40">
+    <section class="relative min-h-[90vh] flex items-center py-20 lg:py-0 overflow-hidden bg-primary-dark">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <!-- Gradient Blobs -->
+            <div
+                class="absolute -top-40 -right-40 w-[800px] h-[800px] bg-accent/10 rounded-full blur-3xl opacity-50 animate-pulse">
+            </div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-3xl opacity-50">
+            </div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Left Column -->
-                <div class="text-white">
-                    <!-- Eyebrow Badge -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <!-- Left Column (Content) -->
+                <div class="lg:w-1/2 text-white pt-10 lg:pt-0">
+                    <!-- Trust Badge -->
                     <div
-                        class="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-8">
-                        <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                        <span>Premium Visa Processing Services</span>
+                        class="inline-flex items-center space-x-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full py-2 px-4 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="text-slate-300 text-xs font-medium tracking-wide">AI-Powered Visa Processing</span>
                     </div>
 
                     <!-- Main Headline -->
-                    <h1 class="text-5xl lg:text-7xl font-bold font-serif leading-tight mb-6">
-                        Visa Services,
+                    <h1
+                        class="text-5xl sm:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] mb-6 opacity-0 animate-[fadeIn_0.5s_ease-out_0.2s_forwards]">
+                        Visas Made <br>
                         <span
-                            class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">Simplified.</span>
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-100 to-amber-400 italic">Effortless.</span>
                     </h1>
 
                     <!-- Subheading -->
-                    <p class="text-xl text-slate-300 leading-relaxed mb-10 max-w-xl font-light">
-                        Professional visa assistance for tourists and businesses. We handle the complex paperwork so you
-                        can travel with confidence.
+                    <p
+                        class="text-xl text-slate-300 font-light leading-relaxed mb-10 max-w-xl opacity-0 animate-[fadeIn_0.5s_ease-out_0.4s_forwards]">
+                        Experience the future of global mobility. Smart application tracking, expert verification, and a
+                        97% approval rate.
                     </p>
 
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                        <button onclick="document.getElementById('assessmentForm').scrollIntoView({behavior: 'smooth'})"
-                            class="bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg shadow-accent/20 flex items-center justify-center">
-                            Start Assessment
-                        </button>
-                        <a href="contact.html"
-                            class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center">
-                            Contact
-                        </a>
-                    </div>
-
                     <!-- Trust Indicators -->
-                    <div class="flex items-center gap-8 text-slate-300 text-sm font-medium">
-                        <div class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <span>97% Approval Rate</span>
+                    <div
+                        class="flex items-center gap-4 text-sm font-medium text-slate-300 opacity-0 animate-[fadeIn_0.5s_ease-out_0.6s_forwards]">
+                        <div class="flex -space-x-4">
+                            <img class="w-10 h-10 rounded-full border-2 border-primary-dark"
+                                src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-primary-dark"
+                                src="https://i.pravatar.cc/150?u=a04258a2462d826712d" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-primary-dark"
+                                src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User">
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-primary-dark bg-accent flex items-center justify-center text-xs font-bold text-white">
+                                +2k</div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fas fa-shield-alt text-accent"></i>
-                            <span>Enterprise Security</span>
+                        <div class="pl-2">
+                            <div class="text-white font-bold">Trusted by Travelers</div>
+                            <div class="text-xs text-emerald-400"><i class="fas fa-star text-xs"></i> 4.9/5 Average
+                                Rating</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column - Assessment Form -->
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8">
-                        <div class="text-center mb-8">
-                            <h3 class="text-2xl font-bold text-white font-serif mb-2">Eligibility Assessment</h3>
-                            <p class="text-slate-300 text-sm">Complimentary analysis within 2 hours</p>
+                <!-- Right Column (Visual + Form) -->
+                <div class="lg:w-1/2 relative opacity-0 animate-[fadeIn_0.5s_ease-out_0.4s_forwards]">
+                    <!-- Floating Image -->
+                    <div class="relative z-0">
+                        <div class="absolute -right-10 -top-10 w-24 h-24 bg-accent/20 rounded-full blur-xl"></div>
+                        <img src="images/hero-human.png" alt="Traveler"
+                            class="relative z-10 w-full rounded-2xl shadow-2xl border border-white/10 mask-image-gradient">
+
+                        <!-- Floating Badge 1 -->
+                        <div
+                            class="absolute -left-6 top-10 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl shadow-lg flex items-center gap-3 animate-[float_3s_ease-in-out_infinite]">
+                            <div
+                                class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Status</div>
+                                <div class="text-sm font-bold text-white">Approved</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Form Card -->
+                    <div
+                        class="relative mt-8 lg:mt-0 lg:absolute lg:-bottom-16 lg:-left-20 w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-6 sm:p-8 z-30 transform transition-transform hover:-translate-y-1 mx-auto">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-serif text-white mb-1">Start Your Journey</h3>
+                            <p class="text-slate-400 text-sm font-light">Free analysis within 2 hours</p>
                         </div>
 
                         <form id="assessmentForm" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input type="text" name="name" placeholder="Full name"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900 placeholder-slate-500"
-                                    required>
-                                <input type="email" name="email" placeholder="Email address"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900 placeholder-slate-500"
-                                    required>
+                            <!-- Hidden animation styling embedded to avoid extra css files -->
+                            <style>
+                                @keyframes float {
+                                    0% {
+                                        transform: translateY(0px);
+                                    }
+
+                                    50% {
+                                        transform: translateY(-10px);
+                                    }
+
+                                    100% {
+                                        transform: translateY(0px);
+                                    }
+                                }
+
+                                @keyframes fadeIn {
+                                    from {
+                                        opacity: 0;
+                                        transform: translateY(10px);
+                                    }
+
+                                    to {
+                                        opacity: 1;
+                                        transform: translateY(0);
+                                    }
+                                }
+                            </style>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="input-group">
+                                    <input type="text" name="name" placeholder="Name" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent/50 transition-all text-sm backdrop-blur-sm">
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" name="email" placeholder="Email" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent/50 transition-all text-sm backdrop-blur-sm">
+                                </div>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input type="tel" name="phone" placeholder="Phone / WhatsApp"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900 placeholder-slate-500">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <input type="tel" name="phone" placeholder="Phone"
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent/50 transition-all text-sm backdrop-blur-sm">
                                 <select name="visaType"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900">
-                                    <option value="">Visa type</option>
-                                    <option value="Tourist">Tourist / Leisure</option>
-                                    <option value="Business">Business / Corporate</option>
-                                    <option value="Cruise">Maritime / Cruise</option>
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent/50 transition-all text-sm appearance-none cursor-pointer backdrop-blur-sm">
+                                    <option value="" class="bg-slate-800">Visa Type</option>
+                                    <option value="Tourist" class="bg-slate-800">Tourist</option>
+                                    <option value="Business" class="bg-slate-800">Business</option>
+                                    <option value="Cruise" class="bg-slate-800">Cruise</option>
                                 </select>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                            <div class="grid grid-cols-1 gap-3">
                                 <select name="destination"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900">
-                                    <option value="">Destination</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="USA">USA</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="UK">UK</option>
-                                    <option value="Schengen">Schengen Area</option>
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent/50 transition-all text-sm appearance-none cursor-pointer backdrop-blur-sm">
+                                    <option value="" class="bg-slate-800">Destination</option>
+                                    <option value="Australia" class="bg-slate-800">Australia</option>
+                                    <option value="USA" class="bg-slate-800">USA</option>
+                                    <option value="Canada" class="bg-slate-800">Canada</option>
+                                    <option value="UK" class="bg-slate-800">UK</option>
+                                    <option value="Schengen" class="bg-slate-800">Schengen</option>
                                 </select>
-                                <input type="date" name="travelDate"
-                                    class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900">
                             </div>
-                            <textarea name="description" rows="3" placeholder="Briefly describe your travel plans"
-                                class="w-full px-4 py-3 bg-white/90 border-0 rounded-lg focus:ring-2 focus:ring-accent text-slate-900 placeholder-slate-500"></textarea>
+
                             <button type="submit"
-                                class="w-full bg-accent hover:bg-accent-light text-white px-6 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg">
-                                Request Assessment
+                                class="w-full bg-accent hover:bg-accent-light text-white font-medium py-4 rounded-lg transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-accent/40 flex items-center justify-center group">
+                                Free Assessment
+                                <i
+                                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                             </button>
-                            <p class="text-xs text-slate-400 text-center">Your data is encrypted and secure.</p>
+
+                            <p class="text-xs text-slate-500 text-center mt-2 flex items-center justify-center">
+                                <i class="fas fa-lock mr-1"></i> Data Encrypted & Secure
+                            </p>
                         </form>
 
-                        <!-- Success Message (Hidden by default) -->
+                        <!-- Success Message -->
                         <div id="successMessage"
-                            class="hidden bg-emerald-900/90 border border-emerald-500/30 rounded-lg p-6 text-center backdrop-blur-md">
+                            class="hidden absolute inset-0 bg-slate-900/95 backdrop-blur-xl rounded-2xl flex flex-col items-center justify-center p-8 text-center z-20">
                             <div
-                                class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-check text-emerald-400 text-xl"></i>
+                                class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6 animate-[bounce_1s_infinite]">
+                                <i class="fas fa-check text-emerald-400 text-2xl"></i>
                             </div>
-                            <h3 class="text-lg font-semibold text-white mb-2">Request Received</h3>
-                            <p class="text-emerald-100 mb-4 text-sm">Our specialists will review your profile and
-                                contact you shortly.</p>
-                            <a href="https://wa.me/923144152590"
-                                class="inline-flex items-center bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-500 transition-colors text-sm">
-                                <i class="fab fa-whatsapp mr-2"></i>
+                            <h3 class="text-xl font-serif text-white mb-2">Request Received</h3>
+                            <p class="text-slate-300 mb-6 text-sm">We'll review your details and contact you shortly.
+                            </p>
+                            <a href="https://wa.me/923144152590" target="_blank"
+                                class="inline-flex items-center bg-[#25D366] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#20bd5a] transition-colors text-sm shadow-lg shadow-emerald-900/50">
+                                <i class="fab fa-whatsapp mr-2 text-lg"></i>
                                 Priority Support
                             </a>
                         </div>
@@ -681,12 +756,36 @@
 
             <!-- Service Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tourist & Holiday Visas -->
-                <!-- Tourist & Holiday Visas -->
+                <!-- Business & Work Permits (Now First, White BG) -->
+                <div
+                    class="group bg-white rounded-xl p-8 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl border border-slate-100 relative">
+                    <div
+                        class="hidden absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        POPULAR</div>
+
+                    <div
+                        class="w-14 h-14 bg-primary text-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                        <i class="fas fa-briefcase text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold font-serif text-primary mb-4">Corporate & Business</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Strategic visa solutions for executives and
+                        teams. Compliance focused processing for global business travel.</p>
+
+                    <a href="countries/usa/business.html"
+                        class="text-accent font-medium hover:text-accent-light transition-colors flex items-center">
+                        Corporate Services <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Tourist & Holiday Visas (Now Middle, Image BG) -->
                 <div
                     class="group relative rounded-xl p-8 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden">
                     <!-- Background Image -->
                     <div class="absolute inset-0">
+                        <div
+                            class="absolute top-0 right-0 z-20 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                            POPULAR</div>
                         <img src="images/tourist.png" alt="Tourist Services"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary/80"></div>
@@ -710,39 +809,7 @@
                     </div>
                 </div>
 
-                <!-- Business & Work Permits -->
-                <div
-                    class="group relative rounded-xl p-8 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden">
-                    <!-- Background Image -->
-                    <div class="absolute inset-0">
-                        <img src="images/corporate.png" alt="Corporate Services"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary/80"></div>
-                    </div>
-
-                    <!-- Content -->
-                    <div class="relative z-10">
-                        <div
-                            class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg -mr-8 -mt-8">
-                            POPULAR</div>
-
-                        <div
-                            class="w-14 h-14 bg-white/10 backdrop-blur-sm text-white rounded-lg flex items-center justify-center mb-6 border border-white/20">
-                            <i class="fas fa-briefcase text-2xl text-accent"></i>
-                        </div>
-
-                        <h3 class="text-2xl font-semibold font-serif text-white mb-4">Corporate & Business</h3>
-                        <p class="text-slate-300 mb-6 leading-relaxed">Strategic visa solutions for executives and
-                            teams. Compliance focused processing for global business travel.</p>
-
-                        <a href="countries/usa/business.html"
-                            class="inline-flex items-center text-white font-medium hover:text-accent transition-colors">
-                            Corporate Services <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Cruise & Multi-Country -->
+                <!-- Cruise & Multi-Country (Last, White BG) -->
                 <div
                     class="group bg-white rounded-xl p-8 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-2xl border border-slate-100">
                     <div
