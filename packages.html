@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Travel Packages - VisaBits Premium</title>
+    <title>Travel Packages - VisaBits</title>
     <meta name="description"
-        content="Exclusive curated travel packages for Europe, Americas, and the Pacific. Experience the world with our premium itineraries and visa-inclusive deals.">
+        content="Explore our curated travel packages to the UK, USA, Europe, and Australia. All-inclusive visas, accommodation, and itineraries catering to UK residents.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,21 +24,11 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
@@ -217,7 +209,11 @@
                         </div>
 
                         <a href="packages.html"
-                            class="text-primary hover:text-accent font-semibold transition-colors bg-amber-50 px-3 py-2 rounded-lg border border-amber-100">Packages</a>
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a>
+                        <a href="blog/index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Blogs</a>
+                        <a href="partners.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Partners</a>
                         <a href="about.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
                         <a href="testimonials.html"
@@ -348,7 +344,11 @@
                 </div>
 
                 <a href="packages.html"
-                    class="block px-3 py-3 rounded-lg text-base font-medium text-primary bg-amber-50 border border-amber-100">Packages</a>
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a>
+                <a href="blog/index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Blogs</a>
+                <a href="partners.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Partners</a>
                 <a href="about.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
                 <a href="testimonials.html"
@@ -358,22 +358,74 @@
             </div>
         </div>
     </nav>
+    <!-- New Hero Section -->
+    <header class="relative pt-32 pb-32 lg:pt-48 lg:pb-40 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img src="images/packages_hero_abstract.png" alt="Global Connectivity"
+                class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/20"></div>
+            <!-- Decorative elements -->
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
+            </div>
+        </div>
 
-    <!-- Header -->
-    <header class="bg-primary pt-24 pb-32 text-white relative overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-[url('images/hero-bg.png')] bg-cover bg-center opacity-10"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold font-serif mb-6 leading-tight">Curated Global <span
-                    class="text-accent">Experiences</span></h1>
-            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Explore the world with our all-inclusive travel packages. From visa processing to luxury accommodation,
-                we handle every detail.
-            </p>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <span
+                    class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-white/10 border border-white/20 text-accent text-xs font-bold tracking-wider mb-8 backdrop-blur-md animate-fade-in-up">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    PREMIUM VISA-INCLUSIVE PACKAGES
+                </span>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight tracking-tight">
+                    Curated Journeys <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-200">Across The
+                        Globe</span>
+                </h1>
+                <p class="text-xl text-slate-300 leading-relaxed font-light mb-10 max-w-2xl">
+                    Experience the world without the paperwork. Our bespoke travel collections combine luxury
+                    accommodation, seamless logistics, and guaranteed visa processing for peace of mind.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.querySelector('main').scrollIntoView({behavior: 'smooth'})"
+                        class="px-8 py-4 bg-accent hover:bg-accent-light text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center gap-2">
+                        View Collections <i class="fas fa-arrow-down"></i>
+                    </button>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/10 rounded-xl font-bold transition-all backdrop-blur-md flex items-center gap-2">
+                        Custom Itinerary <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Indicators Bar -->
+        <div class="absolute bottom-0 w-full border-t border-white/5 bg-black/20 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex overflow-x-auto gap-8 md:gap-12 text-white/80 whitespace-nowrap scrollbar-hide">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-accent"></i>
+                        <div class="text-sm font-medium tracking-wide">Visa Guarantee</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-hotel text-accent"></i>
+                        <div class="text-sm font-medium tracking-wide">4★+ Hotels Included</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-plane text-accent"></i>
+                        <div class="text-sm font-medium tracking-wide">Flight Assistance</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-headset text-accent"></i>
+                        <div class="text-sm font-medium tracking-wide">24/7 Expert Support</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Packages Grid -->
-    <main class="max-w-7xl mx-auto px-6 -mt-20 mb-24 relative z-20">
+    <main class="max-w-7xl mx-auto px-6 py-24">
+
         <!-- Europe Section -->
         <div class="mb-24">
             <div class="flex items-center mb-10">
@@ -384,18 +436,18 @@
             <div
                 class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
                 <div class="h-96 lg:h-full relative overflow-hidden group">
-                    <img src="images/packages/europe.png" alt="European Grand Tour"
+                    <img src="images/packages/europe.png" alt="Europe Grand Tour"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
-                        <div class="text-sm font-bold uppercase tracking-widest text-accent mb-2">Signature Tour</div>
-                        <h3 class="text-3xl font-serif font-bold">The Grand European</h3>
+                        <div class="text-sm font-bold uppercase tracking-widest text-accent mb-2">Signature Series</div>
+                        <h3 class="text-3xl font-serif font-bold">Grand European Tour</h3>
                     </div>
                 </div>
                 <div class="p-10 lg:p-14">
                     <div class="flex justify-between items-start mb-6">
                         <div>
-                            <h3 class="text-2xl font-bold text-primary mb-2">Paris, Rome & Schengen Highlights</h3>
+                            <h3 class="text-2xl font-bold text-primary mb-2">Paris, Rome & Venice</h3>
                             <div class="flex items-center text-slate-500 text-sm">
                                 <i class="far fa-clock mr-2"></i> 14 Days
                                 <span class="mx-3">•</span>

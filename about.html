@@ -97,25 +97,33 @@
         class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
                 <div class="flex items-center group cursor-pointer" onclick="window.location.href='index.html'">
                     <img src="images/logo.jpg" alt="VisaBits Logo"
                         class="h-10 w-auto group-hover:opacity-80 transition-opacity">
                     <span
                         class="ml-3 text-2xl font-bold font-serif text-primary tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Home</a>
+
+                        <!-- Mega Menu Dropdown -->
                         <div class="relative">
                             <button id="desktop-countries-btn"
                                 class="text-slate-600 hover:text-primary font-medium flex items-center transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">
                                 Countries <i class="fas fa-chevron-down ml-1 text-xs transition-transform"
                                     id="desktop-countries-icon"></i>
                             </button>
+
+                            <!-- Dropdown Content -->
                             <div id="desktop-countries-menu"
                                 class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-3xl bg-white rounded-xl shadow-2xl opacity-0 invisible transition-all duration-300 z-50 border border-slate-100 overflow-hidden top-full">
                                 <div class="grid grid-cols-3 gap-0 divide-x divide-slate-50">
+                                    <!-- Europe Column -->
                                     <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
                                         <div class="flex items-center mb-4 space-x-2">
                                             <span class="p-2 bg-blue-100 rounded-lg text-blue-600"><i
@@ -123,6 +131,8 @@
                                             <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Europe
                                             </h3>
                                         </div>
+
+                                        <!-- UK -->
                                         <div class="mb-6">
                                             <div class="flex items-center mb-2">
                                                 <span
@@ -141,6 +151,8 @@
                                                         Visa</a></li>
                                             </ul>
                                         </div>
+
+                                        <!-- Schengen -->
                                         <div>
                                             <div class="flex items-center mb-2">
                                                 <span
@@ -160,6 +172,8 @@
                                             </ul>
                                         </div>
                                     </div>
+
+                                    <!-- Americas Column -->
                                     <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
                                         <div class="flex items-center mb-4 space-x-2">
                                             <span class="p-2 bg-red-100 rounded-lg text-red-600"><i
@@ -167,6 +181,8 @@
                                             <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
                                                 Americas</h3>
                                         </div>
+
+                                        <!-- USA -->
                                         <div class="mb-6">
                                             <div class="flex items-center mb-2">
                                                 <span
@@ -185,6 +201,8 @@
                                                         Visa</a></li>
                                             </ul>
                                         </div>
+
+                                        <!-- Canada -->
                                         <div>
                                             <div class="flex items-center mb-2">
                                                 <span
@@ -204,6 +222,8 @@
                                             </ul>
                                         </div>
                                     </div>
+
+                                    <!-- Pacific Column -->
                                     <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
                                         <div class="flex items-center mb-4 space-x-2">
                                             <span class="p-2 bg-amber-100 rounded-lg text-amber-600"><i
@@ -211,6 +231,8 @@
                                             <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">
                                                 Pacific</h3>
                                         </div>
+
+                                        <!-- Australia -->
                                         <div>
                                             <div class="flex items-center mb-2">
                                                 <span
@@ -231,6 +253,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Bottom Bar -->
                                 <div
                                     class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center">
                                     <span class="text-xs text-slate-500 font-medium">Need help choosing?</span>
@@ -244,7 +267,7 @@
 
                         <a href="packages.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a>
-                        <a href="blog/"
+                        <a href="blog/index.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Blogs</a>
                         <a href="partners.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Partners</a>
@@ -256,6 +279,8 @@
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Contact</a>
                     </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
                         <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
@@ -263,13 +288,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="md:hidden hidden border-t border-slate-100 bg-white absolute w-full shadow-xl max-h-[80vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="index.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
+
                 <div class="px-3 py-2">
                     <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
+
                     <!-- UK Mobile -->
                     <div class="mb-4">
                         <button
@@ -289,14 +318,14 @@
                                 class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
                         </div>
                     </div>
+
                     <!-- Schengen Mobile -->
                     <div class="mb-4">
                         <button
                             class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
                             data-target="mobile-schengen-menu">
                             <div class="flex items-center">
-                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span>
-                                Schengen
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
                             </div>
                             <i class="fas fa-chevron-down text-xs transition-transform"></i>
                         </button>
@@ -309,6 +338,7 @@
                                 class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
                         </div>
                     </div>
+
                     <!-- USA Mobile -->
                     <div class="mb-4">
                         <button
@@ -328,14 +358,14 @@
                                 class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
                         </div>
                     </div>
+
                     <!-- Canada Mobile -->
                     <div class="mb-4">
                         <button
                             class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
                             data-target="mobile-canada-menu">
                             <div class="flex items-center">
-                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span>
-                                Canada
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
                             </div>
                             <i class="fas fa-chevron-down text-xs transition-transform"></i>
                         </button>
@@ -348,14 +378,14 @@
                                 class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
                         </div>
                     </div>
+
                     <!-- Australia Mobile -->
                     <div class="mb-4">
                         <button
                             class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
                             data-target="mobile-australia-menu">
                             <div class="flex items-center">
-                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span>
-                                Australia
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
                             </div>
                             <i class="fas fa-chevron-down text-xs transition-transform"></i>
                         </button>
@@ -372,7 +402,7 @@
 
                 <a href="packages.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a>
-                <a href="blog/"
+                <a href="blog/index.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Blogs</a>
                 <a href="partners.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Partners</a>
@@ -461,10 +491,7 @@
                         <div class="text-center group">
                             <div
                                 class="w-24 h-24 lg:w-32 lg:h-32 bg-slate-200 rounded-full mx-auto mb-4 overflow-hidden relative shadow-md">
-                                <div
-                                    class="absolute inset-0 bg-slate-300 flex items-center justify-center text-slate-400">
-                                    <i class="fas fa-user text-3xl lg:text-4xl"></i>
-                                </div>
+                                <img src="images/salman.png" alt="Muhammad Salman" class="w-full h-full object-cover">
                             </div>
                             <h4 class="font-bold text-primary text-lg">Muhammad Salman</h4>
                             <p class="text-xs text-accent uppercase tracking-wide font-medium">CEO</p>
@@ -584,8 +611,7 @@
                 <h4 class="text-white font-bold mb-4">Contact</h4>
                 <ul class="space-y-2 text-sm">
                     <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-accent"></i>
-                        <span>123
-                            Visa Street, London, UK</span>
+                        <span>London, UK</span>
                     </li>
                     <li class="flex items-center"><i class="fas fa-phone mr-2 text-accent"></i> <span>+92 314 415
                             2590</span></li>

@@ -266,6 +266,8 @@
 
                         <a href="packages.html"
                             class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Packages</a>
+                        <a href="blog/index.html"
+                            class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Blogs</a>
                         <a href="partners.html"
                             class="text-primary font-bold bg-slate-100 transition-colors hover:bg-slate-200 px-3 py-2 rounded-lg">Partners</a>
                         <a href="about.html"
@@ -293,10 +295,112 @@
                 <a href="index.html"
                     class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
 
-                <!-- Mobile Dropdowns (omitted for brevity, can copy if strictly needed but focusing on new page content) -->
+                <div class="px-3 py-2">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
 
-                <a href="packages.html"
-                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Packages</a>
+                    <!-- UK Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-uk-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-gb mr-2 shadow-sm rounded-sm"></span> UK
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-uk-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/uk/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/uk/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/uk/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Schengen Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-schengen-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-schengen-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/schengen/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/schengen/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/schengen/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- USA Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-usa-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-us mr-2 shadow-sm rounded-sm"></span> USA
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-usa-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/usa/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/usa/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/usa/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Canada Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-canada-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-canada-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/canada/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/canada/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/canada/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Australia Mobile -->
+                    <div class="mb-4">
+                        <button
+                            class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn"
+                            data-target="mobile-australia-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-australia-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="countries/australia/tourist.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Tourist</a>
+                            <a href="countries/australia/business.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Business</a>
+                            <a href="countries/australia/cruise.html"
+                                class="block text-sm text-slate-500 hover:text-accent">Cruise</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="blog/index.html"
+                    class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Blogs</a>
                 <a href="partners.html"
                     class="block px-3 py-3 rounded-lg text-base font-bold text-primary bg-slate-50">Partners</a>
                 <a href="about.html"
