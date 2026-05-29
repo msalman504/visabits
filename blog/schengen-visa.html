@@ -33,15 +33,17 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="bg-neutral-50 font-sans text-neutral-800 antialiased selection:bg-neutral-900 selection:text-white">
-    <!-- Header/Navigation (Strictly Minimal) -->
-    <nav class="bg-neutral-50 border-b border-neutral-200/80 sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-6 h-20 flex justify-between items-center">
+    <!-- Header/Navigation (Consistent with blog/index.html) -->
+    <nav class="bg-white border-b border-neutral-200/80 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Brand -->
             <div class="flex items-center cursor-pointer group" onclick="window.location.href='../index.html'">
+                <img src="../images/logo.jpg" alt="VisaBits Logo" class="h-8 w-auto rounded mr-3 shadow-sm">
                 <span class="text-xl font-serif font-bold text-neutral-900 tracking-tight transition-colors group-hover:text-neutral-400">VisaBits</span>
             </div>
             
@@ -55,154 +57,202 @@
         </div>
     </nav>
 
-    <!-- Editorial Article Layout -->
-    <article class="max-w-3xl mx-auto px-6 pt-16 pb-24">
+    <!-- Content Area -->
+    <main class="max-w-4xl mx-auto px-6 pt-16 pb-24">
         
-        <!-- Metadata & Category -->
+        <!-- Article Header -->
         <header class="text-center mb-12">
-            <span class="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-semibold block mb-4">
-                Visa Guidelines &bull; Schengen Europe &bull; 2026 Update
+            <span class="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-bold block mb-4">
+                Visa Guidelines &bull; Schengen Europe &bull; 2026 Edition
             </span>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-neutral-900 tracking-tight leading-[1.1] mb-6">
-                Applying for a Schengen Visa <br><span class="italic font-normal">From the United Kingdom</span>
+                Schengen Visa from the UK: <br><span class="italic font-normal">Step-by-Step VFS & TLS Guide</span>
             </h1>
             <p class="text-neutral-400 text-xs italic font-serif">
-                Written by Salman &bull; Immigration & Compliance Consultant
+                Written by Salman &bull; Immigration & Compliance Expert
             </p>
         </header>
 
-        <!-- Main Body -->
-        <div class="prose prose-neutral max-w-none text-base md:text-lg leading-relaxed text-neutral-800 space-y-8 font-light">
+        <!-- Featured Editorial Header Image -->
+        <div class="mb-16 overflow-hidden rounded-xl border border-neutral-200 shadow-sm">
+            <img src="../images/blog/schengen_bright.png" alt="Schengen Europe Landmark" class="w-full h-auto max-h-[400px] object-cover">
+        </div>
+
+        <!-- 3 Quick Metrics at a Glance (Highly Visual & Instantly Understandable) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="border border-neutral-200 bg-white p-6 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 flex-shrink-0">
+                    <i class="far fa-clock text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold">Processing Time</h4>
+                    <p class="text-sm font-bold text-neutral-900">10 - 15 Calendar Days</p>
+                </div>
+            </div>
+            <div class="border border-neutral-200 bg-white p-6 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 flex-shrink-0">
+                    <i class="fas fa-pound-sign text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold">Recommended Balance</h4>
+                    <p class="text-sm font-bold text-neutral-900">£3,000 - £4,500 Stable</p>
+                </div>
+            </div>
+            <div class="border border-neutral-200 bg-white p-6 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-900 flex-shrink-0">
+                    <i class="far fa-calendar-check text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold">BRP Requirement</h4>
+                    <p class="text-sm font-bold text-neutral-900">3 Months+ Expiry Left</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editorial Content -->
+        <div class="text-base md:text-lg leading-relaxed text-neutral-800 space-y-12 font-light">
             
+            <!-- Lead Paragraph -->
             <p class="text-xl text-neutral-900 font-serif leading-relaxed italic border-l-2 border-neutral-900 pl-6 my-8">
-                Indian, Pakistani, or Nigerian passport holder living in the UK on a BRP? Navigating VFS Global and TLScontact successfully requires meeting highly specific criteria. This guide outlines the exact, non-negotiable rules to secure your approval.
+                Living in the UK on an Indian, Pakistani, or Nigerian passport? Securing your Schengen visa doesn't have to be a guessing game. Below is the precise framework to ensure a successful application at TLScontact or VFS Global.
             </p>
 
-            <hr class="border-neutral-200 my-10">
+            <hr class="border-neutral-200">
 
-            <!-- Section 1: The BRP 3-Month Rule -->
+            <!-- Section 1: The BRP Rule -->
             <section class="space-y-4">
-                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">The 3-Month BRP Expiry Threshold</h2>
+                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">01 / The Non-Negotiable 3-Month BRP Expiry Rule</h2>
                 <p>
-                    Consulates enforce a strict residency policy: your **UK Biometric Residence Permit (BRP)** or digital immigration status **must be valid for at least 3 months beyond your planned return date** from the Schengen Zone. 
-                </p>
-                <p>
-                    If your BRP expires in less than 3 months on the day you leave Europe, TLScontact or VFS Global will reject your application at the front desk. There are no exceptions to this rule.
-                </p>
-            </section>
-
-            <!-- Section 2: Core Requirements -->
-            <section class="space-y-6 pt-6">
-                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">Standard Mandatory Documentation</h2>
-                <p>
-                    Unlike applications submitted from your home country, UK consulates require rigorous evidence of your active ties to the UK. Ensure you have these verified items prepared:
+                    Embassy rules are absolute. Your **UK Biometric Residence Permit (BRP)** or digital status **MUST be valid for at least 3 months after you return** from the Schengen Zone. 
                 </p>
                 
-                <div class="space-y-4">
-                    <!-- Req item 1 -->
-                    <div class="border border-neutral-200 bg-white p-6 rounded-lg shadow-sm">
-                        <h3 class="font-serif font-bold text-neutral-900 text-lg mb-2">1. 3-Month Financial Statements</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed font-normal">
-                            You must present your last 3 months of bank statements showing an active, consistent balance of **£3,000 to £4,500**. Regular salary deposits are essential. "Lump-sum dumps" (transferring large sums right before printing statements) will trigger an immediate refusal.
-                        </p>
+                <!-- Graphic warning card (Border-only, elegant, easy to spot) -->
+                <div class="border border-red-200 bg-red-50/50 p-6 rounded-lg my-6 flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-700 flex-shrink-0 text-sm">
+                        <i class="fas fa-exclamation-triangle"></i>
                     </div>
-
-                    <!-- Req item 2 -->
-                    <div class="border border-neutral-200 bg-white p-6 rounded-lg shadow-sm">
-                        <h3 class="font-serif font-bold text-neutral-900 text-lg mb-2">2. Compliant Schengen Travel Insurance</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed font-normal">
-                            Your policy must specifically state it covers all Schengen States (or Worldwide) with a medical limit of at least **€30,000**, including full repatriation coverage. Free credit card travel insurance is rarely accepted unless accompanied by a formal visa certificate.
-                        </p>
-                    </div>
-
-                    <!-- Req item 3 -->
-                    <div class="border border-neutral-200 bg-white p-6 rounded-lg shadow-sm">
-                        <h3 class="font-serif font-bold text-neutral-900 text-lg mb-2">3. Proof of Employment or Study</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed font-normal">
-                            A signed and stamped letter from your employer or university registrar, dated within 30 days of your appointment, confirming your role, start date, salary, and that you are expected back to resume your duties.
+                    <div>
+                        <h4 class="font-bold text-red-900 text-sm uppercase tracking-wide mb-1">Immediate Check-In Rejection</h4>
+                        <p class="text-red-800 text-sm font-normal leading-relaxed">
+                            If your BRP expires in less than 90 days from your planned departure date, VFS or TLS officials will decline to accept your passport on the spot. Make sure to double-check your dates before booking appointment slots.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 3: Cost and Fees -->
-            <section class="space-y-4 pt-6">
-                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">Consular & Service Fees</h2>
+            <!-- Section 2: Document Checklist (Highly Visual & Scannable) -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">02 / Mandatory Document Checklist</h2>
                 <p>
-                    Visa and processing charges consist of the standard embassy fee and the center's handling charge:
+                    Ensure your documents conform to this exact standard. Missing a single stamp or signature can lead to a refusal letter:
                 </p>
+
+                <div class="border border-neutral-200 bg-white rounded-lg p-6 space-y-4">
+                    <div class="flex items-start gap-4 pb-4 border-b border-neutral-100">
+                        <i class="fas fa-circle-check text-neutral-900 mt-1 text-sm flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-neutral-900 text-base">3 Months Official Bank Statements</h4>
+                            <p class="text-sm text-neutral-500 font-normal leading-relaxed">Must show regular salary deposits and maintain a consistent balance above £3,000. Avoid cash deposits or transferring large lump sums right before print dates (commonly flagged as "funds dumping").</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 pb-4 border-b border-neutral-100">
+                        <i class="fas fa-circle-check text-neutral-900 mt-1 text-sm flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-neutral-900 text-base">Consular-Approved Travel Insurance</h4>
+                            <p class="text-sm text-neutral-500 font-normal leading-relaxed">A formal visa certificate confirming a minimum medical limit of **€30,000**, zero deductible/excess, and active repatriation coverage across all Schengen member states.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-circle-check text-neutral-900 mt-1 text-sm flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-bold text-neutral-900 text-base">Official Signed Proof of Ties</h4>
+                            <p class="text-sm text-neutral-500 font-normal leading-relaxed">An employment letter printed on letterhead, signed by HR, and dated within 30 days of the appointment. If studying, an official registrar-signed enrollment letter.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Cost and Fees -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">03 / Consular & Appointment Charges</h2>
+                <p>
+                    Embassy processing charges are standard, but the third-party appointment handling center fees are separate and non-refundable:
+                </p>
+                
                 <div class="border border-neutral-200 bg-white rounded-lg overflow-hidden my-6">
                     <table class="w-full text-left text-sm">
                         <thead class="bg-neutral-100/50 border-b border-neutral-200">
                             <tr>
-                                <th class="p-4 font-serif font-bold text-neutral-900">Category</th>
-                                <th class="p-4 font-serif font-bold text-neutral-900">Standard Cost</th>
-                                <th class="p-4 font-serif font-bold text-neutral-900">Notes</th>
+                                <th class="p-4 font-serif font-bold text-neutral-900">Fee Class</th>
+                                <th class="p-4 font-serif font-bold text-neutral-900">Cost (GBP Equivalent)</th>
+                                <th class="p-4 font-serif font-bold text-neutral-900">Details</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-neutral-200 font-normal text-neutral-600">
                             <tr>
                                 <td class="p-4 font-semibold text-neutral-900">Consular Visa Fee (Adults)</td>
                                 <td class="p-4 font-bold text-neutral-900">€90 (~£78)</td>
-                                <td class="p-4">Standard government visa processing fee.</td>
+                                <td class="p-4">Embassy standard government visa check charge.</td>
                             </tr>
                             <tr>
-                                <td class="p-4 font-semibold text-neutral-900">Consular Visa Fee (Kids 6-12)</td>
+                                <td class="p-4 font-semibold text-neutral-900">Consular Visa Fee (Ages 6-12)</td>
                                 <td class="p-4 font-bold text-neutral-900">€45 (~£39)</td>
-                                <td class="p-4">Reduced rate for children; under 6 is exempt.</td>
+                                <td class="p-4">Consular fee; children under 6 are completely free.</td>
                             </tr>
                             <tr>
-                                <td class="p-4 font-semibold text-neutral-900">VFS / TLScontact Handling Charge</td>
+                                <td class="p-4 font-semibold text-neutral-900">TLScontact / VFS Handling Fee</td>
                                 <td class="p-4 font-bold text-neutral-900">£25 - £40</td>
-                                <td class="p-4">Administrative appointment slot booking charge.</td>
+                                <td class="p-4">Booking center administration charge paid when locking slot.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Section 4: Process -->
-            <section class="space-y-4 pt-6">
-                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">The Application Pathway</h2>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <span class="text-lg font-serif font-bold text-neutral-900">01 /</span>
-                        <p class="pt-0.5">**Consulate Selection:** Apply to the country where you spend the most nights. If nights are equal, apply to the country that serves as your first port of entry into the Schengen zone.</p>
+            <!-- Section 4: Process Pathway (Visual Roadmap Layout) -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight">04 / The Application Journey</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="relative border-l border-neutral-200 ml-3 space-y-8">
+                            <div class="ml-6 relative">
+                                <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-[37px] text-white font-serif font-bold text-xs">1</span>
+                                <h4 class="font-bold text-neutral-900 text-base mb-1">Determine the Correct Consulate</h4>
+                                <p class="text-xs text-neutral-500 font-normal leading-relaxed">Apply to the country of your main destination. If spending equal time in multiple countries, apply to the country that serves as your first port of entry.</p>
+                            </div>
+                            <div class="ml-6 relative">
+                                <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-[37px] text-white font-serif font-bold text-xs">2</span>
+                                <h4 class="font-bold text-neutral-900 text-base mb-1">Verify Bookings & Reservations</h4>
+                                <p class="text-xs text-neutral-500 font-normal leading-relaxed">Gather confirmed hotel vouchers and flight itineraries. Use verifiable, non-payment holds to protect your money prior to final approval.</p>
+                            </div>
+                            <div class="ml-6 relative">
+                                <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-200 rounded-full -left-[37px] text-neutral-800 font-serif font-bold text-xs">3</span>
+                                <h4 class="font-bold text-neutral-900 text-base mb-1">Attend Biometrics Appointment</h4>
+                                <p class="text-xs text-neutral-500 font-normal leading-relaxed">Submit your printed files at TLScontact or VFS Global, give fingerprints, and submit your passport. Processing takes **10 to 15 days**.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex gap-4">
-                        <span class="text-lg font-serif font-bold text-neutral-900">02 /</span>
-                        <p class="pt-0.5">**Flight & Hotel Bookings:** Never purchase non-refundable flight tickets before receiving your visa. Utilize verifiable flight reservations and fully cancellable hotel bookings to safeguard your travel finances.</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <span class="text-lg font-serif font-bold text-neutral-900">03 /</span>
-                        <p class="pt-0.5">**Biometrics Submission:** Schedule your appointment at TLScontact or VFS Global. Hand over your passport, give fingerprints, and expect a standard processing time of **10 to 15 calendar days**.</p>
+                    <div class="border border-neutral-200 p-6 rounded-lg bg-white shadow-sm">
+                        <img src="../images/canada_application_process.png" alt="Process Workflow Overview" class="w-full h-auto rounded shadow-sm opacity-90">
+                        <p class="text-[10px] text-center text-neutral-400 font-semibold uppercase tracking-wider mt-4">Typical Visa Application Pipeline</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 5: Common Mistakes -->
-            <section class="space-y-4 pt-6">
-                <h2 class="text-2xl font-serif font-bold text-neutral-900 tracking-tight text-red-900">Strategic Warnings</h2>
-                <p>
-                    Ensure your bank statements are either officially stamped by the branch or include a digital verification barcode (e.g., Monzo or Revolut PDF statements). Standard home printer copies lacking security elements are often rejected on the spot.
-                </p>
-                <p>
-                    Additionally, make certain every character of your name exactly matches across your passport, BRP, travel insurance certificate, and employer letter. Discrepancies lead to immediate rejections at check-in.
-                </p>
-            </section>
+            <hr class="border-neutral-200">
 
-            <hr class="border-neutral-200 my-12">
-
-            <!-- Editorial Callout CTA -->
-            <div class="border border-neutral-900 p-8 md:p-12 rounded-lg text-center bg-white">
+            <!-- Editorial Callout CTA (Premium & High-Converting) -->
+            <div class="border border-neutral-900 p-8 md:p-12 rounded-lg text-center bg-white shadow-sm">
+                <img src="../images/author_salman.png" alt="Salman - Visa Consultant" class="w-20 h-20 rounded-full object-cover border-2 border-neutral-200 mx-auto mb-6 shadow-sm">
                 <h3 class="text-2xl md:text-3xl font-serif font-bold text-neutral-900 mb-4">Let Us Handle the Paperwork.</h3>
                 <p class="text-sm text-neutral-500 max-w-xl mx-auto mb-8 font-normal leading-relaxed">
-                    Why risk a visa refusal over a minor documentation mistake? Our team reviews your financials, corrects form errors, drafts custom cover letters, and handles your booking slots.
+                    Don't let a minor document omission cancel your European holiday plans. Our professional consultants will review your statements, book your appointment slots, and draft a high-compliance cover letter.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://wa.me/923144152590"
                         class="bg-neutral-900 hover:bg-neutral-800 text-white font-medium uppercase tracking-widest text-xs py-4 px-8 transition-colors flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp Support
+                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp Priority
                     </a>
                     <a href="../contact.html"
                         class="border border-neutral-900 hover:bg-neutral-50 text-neutral-950 font-medium uppercase tracking-widest text-xs py-4 px-8 transition-all">
@@ -210,16 +260,16 @@
                     </a>
                 </div>
                 <p class="text-[10px] text-neutral-400 uppercase tracking-widest mt-6 font-semibold">
-                    Average processing time: 14 Days &bull; 98% Document Compliance Success
+                    Average processing: 14 Days &bull; 98% Approved Compliance Document Support
                 </p>
             </div>
 
         </div>
-    </article>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-neutral-200 py-12">
-        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center text-xs text-neutral-400 uppercase tracking-widest">
+        <div class="max-w-5xl mx-auto px-6 flex justify-between items-center text-xs text-neutral-400 uppercase tracking-widest">
             <span>&copy; 2026 VisaBits. All rights reserved.</span>
             <span>Making Travel Seamless</span>
         </div>
