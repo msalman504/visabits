@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
 
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Guides & Resources - VisaBits</title>
-    <meta name="description"
-        content="Expert visa guides for global travelers. Clear, concise advice on tourist, business, and cruise visas for major destinations.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Guides &amp; Resources - VisaBits</title>
+<meta content="Expert visa guides for global travelers. Clear, concise advice on tourist, business, and cruise visas for major destinations." name="description"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -29,578 +28,383 @@
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
-
 <body class="bg-white text-slate-800 font-sans antialiased">
-    <!-- Navigation (Light) -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center group cursor-pointer" onclick="window.location.href='../index.html'">
-                    <img src="../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto rounded-lg shadow-sm">
-                    <span
-                        class="ml-3 text-2xl font-bold font-serif text-slate-900 tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html"
-                        class="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
-                    <a href="../packages.html"
-                        class="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm uppercase tracking-wide">Packages</a>
-                    <a href="index.html" class="text-accent font-semibold text-sm uppercase tracking-wide">Blogs</a>
-                    <a href="../contact.html"
-                        class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2 rounded-full transition-all text-sm font-medium shadow-md hover:shadow-lg">Contact
+<!-- Navigation (Light) -->
+<nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Logo -->
+<div class="flex items-center group cursor-pointer" onclick="window.location.href='../index.html'">
+<img alt="VisaBits Logo" class="h-10 w-auto rounded-lg shadow-sm" src="../images/logo.jpg"/>
+<span class="ml-3 text-2xl font-bold font-serif text-slate-900 tracking-tight group-hover:text-accent transition-colors">VisaBits</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm uppercase tracking-wide" href="../index.html">Home</a>
+<a class="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm uppercase tracking-wide" href="../packages.html">Packages</a>
+<a class="text-accent font-semibold text-sm uppercase tracking-wide" href="index.html">Blogs</a>
+<a class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2 rounded-full transition-all text-sm font-medium shadow-md hover:shadow-lg" href="../contact.html">Contact
                         Us</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-900 p-2">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full shadow-lg">
-            <div class="px-4 py-6 space-y-4">
-                <a href="../index.html" class="block text-slate-600 hover:text-slate-900 font-medium">Home</a>
-                <a href="../packages.html" class="block text-slate-600 hover:text-slate-900 font-medium">Packages</a>
-                <a href="index.html" class="block text-accent font-semibold">Blogs</a>
-                <a href="../contact.html" class="block text-slate-600 hover:text-slate-900 font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section (Clean/Minimal) -->
-    <header class="pt-32 pb-16 lg:pt-48 lg:pb-24 bg-white relative overflow-hidden">
-        <!-- Subtle Decoration -->
-        <div
-            class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span
-                class="inline-block py-1 px-3 rounded-full bg-blue-50 text-accent text-xs font-bold tracking-wider mb-6">
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button class="text-slate-900 p-2" id="mobile-menu-button">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full shadow-lg" id="mobile-menu">
+<div class="px-4 py-6 space-y-4">
+<a class="block text-slate-600 hover:text-slate-900 font-medium" href="../index.html">Home</a>
+<a class="block text-slate-600 hover:text-slate-900 font-medium" href="../packages.html">Packages</a>
+<a class="block text-accent font-semibold" href="index.html">Blogs</a>
+<a class="block text-slate-600 hover:text-slate-900 font-medium" href="../contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section (Clean/Minimal) -->
+<header class="pt-32 pb-16 lg:pt-48 lg:pb-24 bg-white relative overflow-hidden">
+<!-- Subtle Decoration -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-accent text-xs font-bold tracking-wider mb-6">
                 VISA INTELLIGENCE
             </span>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-900 mb-6 leading-tigher">
-                Explore the World <br> <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600 italic">Without
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-900 mb-6 leading-tigher">
+                Explore the World <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600 italic">Without
                     Borders</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+</h1>
+<p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
                 Expert insights, detailed guides, and the latest updates on visa requirements for your next global
                 adventure.
             </p>
-        </div>
-    </header>
-
-    <!-- Main Content (Grid Layout) -->
-    <main class="py-16 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                <!-- FRANCE Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/schengen_bright.png" alt="FRANCE" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">FRANCE</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</div>
+</header>
+<!-- Main Content (Grid Layout) -->
+<main class="py-16 bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+<!-- FRANCE Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="FRANCE" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/schengen_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">FRANCE</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             France Schengen Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Unlock TLScontact London slots! Read the complete France Schengen Visa from UK 2026 guide, covering application forms, €30,000 travel insurance excess rules, and BRP limits.
                         </p>
-                        <a href="france-schengen-visa-from-uk-tlscontact-london-processing-secrets.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="france-schengen-visa-from-uk-tlscontact-london-processing-secrets.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- US Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="US" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">US</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- US Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="US" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/canada_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">US</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             US Visitor Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Bypass the 9-month wait list! Read our complete US Visitor Visa from UK B1/B2 guide, covering DS-160 errors, Nine Elms slot updates, and passport returns.
                         </p>
-                        <a href="us-visitor-visa-from-uk-london-nine-elms-waiting-times-ds-160-guide.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="us-visitor-visa-from-uk-london-nine-elms-waiting-times-ds-160-guide.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- SPAIN Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/schengen_bright.png" alt="SPAIN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SPAIN</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- SPAIN Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="SPAIN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/schengen_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SPAIN</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Spain Schengen Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Don't get turned away at VFS! Complete guide on how to present your digital UK eVisa (Share Code) for Schengen visa applications in 2026.
                         </p>
-                        <a href="spain-schengen-visa-from-uk-requirements-appointment-slots.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="spain-schengen-visa-from-uk-requirements-appointment-slots.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
+</a>
+</div>
+</article>
+<!-- UK Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/uk-evisa-schengen-visas-vfs-share-code-requirements_hero.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+                            UK eVisa &amp; Schengen Visas
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+                            Avoid slot rejections! Master the complete UK eVisa &amp; Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
                         </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="uk-evisa-schengen-visas-vfs-share-code-requirements.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- VFS Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="VFS" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">VFS</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- UK Card -->
+
+<!-- UK Card -->
+
+<!-- UK Card -->
+
+<!-- VFS Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="VFS" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/canada_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">VFS</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             VFS Global London Booking Secrets
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Avoid slot rejections! Master the complete VFS Global London Booking Secrets: How to Secure Schengen Slots guide covering financial standing, travel insurance, and step-by-step document checks.
                         </p>
-                        <a href="vfs-global-london-booking-secrets-how-to-secure-schengen-slots.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="vfs-global-london-booking-secrets-how-to-secure-schengen-slots.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- UK Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/uk-evisa-schengen-visas-vfs-share-code-requirements_hero.png" alt="UK" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">UK</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            UK eVisa & Schengen Visas
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            Avoid slot rejections! Master the complete UK eVisa & Schengen Visas: VFS Share Code Requirements guide covering financial standing, travel insurance, and step-by-step document checks.
-                        </p>
-                        <a href="uk-evisa-schengen-visas-vfs-share-code-requirements.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- GERMANY Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/schengen_bright.png" alt="GERMANY" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">GERMANY</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- UK Card -->
+
+<!-- UK Card -->
+
+<!-- UK Card -->
+
+<!-- GERMANY Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="GERMANY" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/schengen_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">GERMANY</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Germany Schengen Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Avoid VisaMetric appointment refusals! Master the complete Germany Schengen Visa from UK 2026 guide, covering VIDEX forms, financial requirements, and jurisdiction rules.
                         </p>
-                        <a href="germany-schengen-visa.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="germany-schengen-visa.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-
-                <!-- SCHENGEN Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/schengen_bright.png" alt="SCHENGEN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SCHENGEN</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- SCHENGEN Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="SCHENGEN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/schengen_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SCHENGEN</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Schengen Visa with eVisa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Avoid simple application mistakes! Complete, expert guide on how to successfully apply for a Schengen Visa with eVisa from the UK, covering financials and documentation.
                         </p>
-                        <a href="schengen-visa-with-evisa.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="schengen-visa-with-evisa.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- FRANCE Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="FRANCE" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">FRANCE</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- FRANCE Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="FRANCE" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/canada_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">FRANCE</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             France Schengen Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Avoid simple application mistakes! Complete, expert guide on how to successfully apply for a France Schengen Visa from the UK, covering financials and documentation.
                         </p>
-                        <a href="france-schengen-visa.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="france-schengen-visa.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-                <!-- SCHENGEN Card -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="SCHENGEN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SCHENGEN</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- SCHENGEN Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="SCHENGEN" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/canada_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">SCHENGEN</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Schengen Visa from UK
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Avoid simple application mistakes! Complete, expert guide on how to successfully apply for a Schengen Visa from the UK, covering financials and documentation.
                         </p>
-                        <a href="schengen-visa.html" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="schengen-visa.html">
                             Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-    
-
-                <!-- Australia Card -->
-                <article
-                    class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/australia_bright.png" alt="Australia Opera House"
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">AUSTRALIA</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3
-                            class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+</a>
+</div>
+</article>
+<!-- Australia Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="Australia Opera House" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/australia_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">AUSTRALIA</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Complete Australia Visa Guidelines
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Planning a trip to Down Under? Discover everything you need to know about Australian
                             tourist, business, and cruise visas for UK residents.
                         </p>
-                        <a href="australia-visa-guide.html"
-                            class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i
-                                class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- USA Card -->
-                <article
-                    class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/usa_bright.png" alt="NYC Skyline"
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">USA</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3
-                            class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            US B1/B2 & ESTA Masterclass
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="australia-visa-guide.html">
+                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+</a>
+</div>
+</article>
+<!-- USA Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="NYC Skyline" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/usa_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">USA</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+                            US B1/B2 &amp; ESTA Masterclass
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Don't let paperwork stop your American dream. We break down the complexities of US entry
                             requirements for British and non-British residents.
                         </p>
-                        <a href="usa-visitor-visa-uk.html"
-                            class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i
-                                class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="usa-visitor-visa-uk.html">
+                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+</a>
+</div>
+</article>
+<!-- Schengen Card -->
 
-                <!-- Schengen Card -->
-                <article
-                    class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/schengen_bright.png" alt="Schengen Street"
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">EUROPE</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3
-                            class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
-                            The Unified Schengen Visa
-                        </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
-                            One visa, 27 countries. Learn how to navigate the application process for France, Italy,
-                            Spain, and more with our expert tips.
-                        </p>
-                        <a href="schengen-visa.html"
-                            class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i
-                                class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Canada Card -->
-                <article
-                    class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="../images/blog/canada_bright.png" alt="Lake Louise"
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">CANADA</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex-1 flex flex-col">
-                        <h3
-                            class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
+<!-- Canada Card -->
+<article class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group flex flex-col h-full border border-slate-100">
+<div class="relative h-64 overflow-hidden">
+<img alt="Lake Louise" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="../images/blog/canada_bright.png"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">CANADA</span>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<h3 class="text-2xl font-serif font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">
                             Canada Visitor Visa Breakdown
                         </h3>
-                        <p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
+<p class="text-slate-500 mb-6 line-clamp-3 leading-relaxed flex-1">
                             Explore the Great White North. Essential guide for Indian passport holders in the UK,
                             covering the 10-year visa and biometrics.
                         </p>
-                        <a href="canada-visitor-visa-uk.html"
-                            class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link">
-                            Read Guide <i
-                                class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- Success Stats (Minimal) -->
-    <section class="py-20 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold text-slate-900 mb-2">99%</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Approval Rate</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-slate-900 mb-2">24h</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Fast Processing</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-slate-900 mb-2">50+</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Countries</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold text-slate-900 mb-2">24/7</div>
-                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Expert Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Start Journey CTA -->
-    <section class="py-24 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Ready to Start Your Application?
+<a class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group/link" href="canada-visitor-visa-uk.html">
+                            Read Guide <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
+</a>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Success Stats (Minimal) -->
+<section class="py-20 bg-white border-b border-slate-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-4xl font-bold text-slate-900 mb-2">99%</div>
+<div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Approval Rate</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-slate-900 mb-2">24h</div>
+<div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Fast Processing</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-slate-900 mb-2">50+</div>
+<div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Countries</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-slate-900 mb-2">24/7</div>
+<div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Expert Support</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Start Journey CTA -->
+<section class="py-24 bg-slate-50">
+<div class="max-w-3xl mx-auto px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Ready to Start Your Application?
             </h2>
-            <p class="text-lg text-slate-600 mb-10 font-light">
+<p class="text-lg text-slate-600 mb-10 font-light">
                 Get a comprehensive preliminary assessment of your visa profile in just a few clicks. Fast, secure, and
                 reliable.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/923144152590"
-                    class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Priority
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1" href="https://wa.me/923144152590">
+<i class="fab fa-whatsapp text-xl"></i> WhatsApp Priority
                 </a>
-                <a href="../contact.html"
-                    class="bg-white text-slate-900 hover:text-accent px-8 py-4 rounded-xl font-semibold border border-slate-200 hover:border-accent transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 transform hover:-translate-y-1">
+<a class="bg-white text-slate-900 hover:text-accent px-8 py-4 rounded-xl font-semibold border border-slate-200 hover:border-accent transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 transform hover:-translate-y-1" href="../contact.html">
                     Start Assessment <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (Minimal) -->
-    <footer class="bg-white py-12 border-t border-slate-100">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2 opacity-90">
-                <img src="../images/logo.jpg" alt="Logo" class="h-6 w-auto rounded">
-                <span class="text-lg font-bold text-slate-900">VisaBits</span>
-            </div>
-            <p class="text-slate-500 text-sm">© 2024 VisaBits. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer (Minimal) -->
+<footer class="bg-white py-12 border-t border-slate-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-90">
+<img alt="Logo" class="h-6 w-auto rounded" src="../images/logo.jpg"/>
+<span class="text-lg font-bold text-slate-900">VisaBits</span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 VisaBits. All rights reserved.</p>
+</div>
+</footer>
+<script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         if (btn && menu) {
@@ -610,5 +414,4 @@
         }
     </script>
 </body>
-
 </html>
