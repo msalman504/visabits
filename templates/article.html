@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta property="og:title" content="{{OG_TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <!-- Tailwind CDN with Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', // Deep slate navy (bluish grey)
+                        'primary-light': '#1e293b',
+                        'primary-dark': '#020617',
+                        accent: '#84cc16', // Green-lime (highly legible text)
+                        'accent-neon': '#d1e917', // Warm Chartreuse/Lime from reference image
+                        'accent-light': '#dbf367',
+                        'warm-cream': '#fbfaf7' // Warm cream off-white background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for typography details -->
+    <style>
+        .body-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155; /* Slate-700 */
+        }
+        .body-text p {
+            margin-bottom: 1.5rem;
+        }
+        .body-text strong {
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .section-head {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .callout {
+            border-left: 4px solid #0d9488; /* Teal-600 */
+            background-color: #f0fdfa; /* Teal-50 */
+            color: #115e59; /* Teal-800 */
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+        .callout p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .callout strong {
+            color: #0f766e;
+        }
+        .warning-callout {
+            border-left: 4px solid #d97706; /* Amber-600 */
+            background-color: #fffbeb; /* Amber-50 */
+            color: #78350f; /* Amber-900 */
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+        .warning-callout p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .warning-callout strong {
+            color: #92400e;
+        }
+        .checklist {
+            list-style: none;
+            margin: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ecfdf5; /* Emerald-50 */
+            border: 1px solid #a7f3d0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .check-icon i {
+            font-size: 11px;
+            color: #059669; /* Emerald-600 */
+        }
+        .pull-quote {
+            margin: 2.5rem 0;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            border-left: 4px solid #dbf367; /* Accent-light */
+        }
+        .pull-quote blockquote {
+            font-style: italic;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        /* Premium Interactive Checklist Upgrade */
+        .checklist li {
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+        .checklist li:hover {
+            transform: translateX(6px);
+        }
+        .checklist li.checked span {
+            text-decoration: line-through;
+            color: #94a3b8; /* Slate-400 */
+        }
+        .checklist li.checked .check-icon {
+            background-color: #f1f5f9 !important; /* Slate-100 */
+            border-color: #cbd5e1 !important; /* Slate-300 */
+        }
+        .checklist li.checked .check-icon i {
+            color: #64748b !important; /* Slate-500 */
+        }
+
+        /* Premium Glassmorphism Sidebar Card Upgrade */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 50px 0 rgba(198, 235, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 45px -8px rgba(0, 0, 0, 0.6), 0 0 60px 0 rgba(198, 235, 0, 0.06);
+        }
+
+        /* Glowing Custom Action Button */
+        .glow-button {
+            background-color: #d1e917 !important;
+            color: #0f172a !important;
+            box-shadow: 0 4px 14px 0 rgba(209, 233, 23, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-button:hover {
+            background-color: #dbf367 !important;
+            box-shadow: 0 6px 20px 0 rgba(209, 233, 23, 0.5);
+            transform: translateY(-1px);
+        }
+    </style>
+    
+    {{SCHEMA_JSON}}
+</head>
+
+<body class="bg-[#fbfaf7] font-sans antialiased text-slate-800">
+    <!-- Scroll Progress Indicator -->
+    <div id="progressBar" class="fixed top-0 left-0 h-1 bg-[#d1e917] z-[100] transition-all duration-100" style="width: 0%"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center group cursor-pointer" onclick="window.location.href='../index.html'">
+                    <img src="../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto group-hover:opacity-80 transition-opacity rounded">
+                    <span class="ml-3 text-2xl font-bold text-primary tracking-tight group-hover:text-accent-neon transition-colors">VisaBits</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="../index.html" class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Home</a>
+
+                        <!-- Mega Menu Dropdown -->
+                        <div class="relative">
+                            <button id="desktop-countries-btn" class="text-slate-600 hover:text-primary font-medium flex items-center transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">
+                                Countries <i class="fas fa-chevron-down ml-1 text-xs transition-transform" id="desktop-countries-icon"></i>
+                            </button>
+
+                            <!-- Dropdown Content -->
+                            <div id="desktop-countries-menu" class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-3xl bg-white rounded-xl shadow-2xl opacity-0 invisible transition-all duration-300 z-50 border border-slate-100 overflow-hidden top-full">
+                                <div class="grid grid-cols-3 gap-0 divide-x divide-slate-50">
+                                    <!-- Europe Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-blue-100 rounded-lg text-blue-600"><i class="fas fa-globe-europe"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Europe</h3>
+                                        </div>
+
+                                        <!-- UK -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span class="flag-icon flag-icon-gb text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">United Kingdom</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../countries/uk/tourist.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Tourist Visa</a></li>
+                                                <li><a href="../countries/uk/business.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Business Visa</a></li>
+                                                <li><a href="../countries/uk/cruise.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Cruise Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Schengen -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span class="flag-icon flag-icon-eu text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Schengen</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../countries/schengen/tourist.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Tourist Visa</a></li>
+                                                <li><a href="../countries/schengen/business.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Business Visa</a></li>
+                                                <li><a href="../countries/schengen/cruise.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Cruise Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Americas Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-red-100 rounded-lg text-red-600"><i class="fas fa-globe-americas"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Americas</h3>
+                                        </div>
+
+                                        <!-- USA -->
+                                        <div class="mb-6">
+                                            <div class="flex items-center mb-2">
+                                                <span class="flag-icon flag-icon-us text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">USA</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../countries/usa/tourist.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Tourist Visa</a></li>
+                                                <li><a href="../countries/usa/business.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Business Visa</a></li>
+                                                <li><a href="../countries/usa/cruise.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Cruise Visa</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Canada -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span class="flag-icon flag-icon-ca text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Canada</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../countries/canada/tourist.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Tourist Visa</a></li>
+                                                <li><a href="../countries/canada/business.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Business Visa</a></li>
+                                                <li><a href="../countries/canada/cruise.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Cruise Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pacific Column -->
+                                    <div class="p-6 bg-slate-50/50 hover:bg-white transition-colors">
+                                        <div class="flex items-center mb-4 space-x-2">
+                                            <span class="p-2 bg-amber-100 rounded-lg text-amber-600"><i class="fas fa-sun"></i></span>
+                                            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Pacific</h3>
+                                        </div>
+
+                                        <!-- Australia -->
+                                        <div>
+                                            <div class="flex items-center mb-2">
+                                                <span class="flag-icon flag-icon-au text-lg mr-2 shadow-sm rounded-sm"></span>
+                                                <span class="font-semibold text-slate-800">Australia</span>
+                                            </div>
+                                            <ul class="space-y-1 ml-8 border-l-2 border-slate-200 pl-3">
+                                                <li><a href="../countries/australia/tourist.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Tourist Visa</a></li>
+                                                <li><a href="../countries/australia/business.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Business Visa</a></li>
+                                                <li><a href="../countries/australia/cruise.html" class="text-sm text-slate-500 hover:text-accent-neon hover:bg-slate-50 px-1 py-0.5 rounded block transition-colors">Cruise Visa</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mega Menu Bottom Bar -->
+                                <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-500 font-medium">Need help choosing?</span>
+                                    <a href="../contact.html" class="text-xs font-bold text-slate-950 hover:text-slate-800 flex items-center">
+                                        Book a Consultation <i class="fas fa-arrow-right ml-1 text-slate-950"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="index.html" class="text-slate-950 border-b-2 border-[#d1e917] font-semibold px-3 py-2">Blogs</a>
+                        <a href="../partners.html" class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Partners</a>
+                        <a href="../about.html" class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">About</a>
+                        <a href="../testimonials.html" class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Testimonials</a>
+                        <a href="../contact.html" class="text-slate-600 hover:text-primary font-medium transition-colors hover:bg-slate-50 px-3 py-2 rounded-lg">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-primary p-2">
+                        <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-slate-100 bg-white absolute w-full shadow-xl max-h-[80vh] overflow-y-auto z-50">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Home</a>
+
+                <div class="px-3 py-2">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-4">Destinations</div>
+
+                    <!-- UK Mobile -->
+                    <div class="mb-4">
+                        <button class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn" data-target="mobile-uk-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-gb mr-2 shadow-sm rounded-sm"></span> UK
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-uk-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../countries/uk/tourist.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Tourist</a>
+                            <a href="../countries/uk/business.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Business</a>
+                            <a href="../countries/uk/cruise.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Schengen Mobile -->
+                    <div class="mb-4">
+                        <button class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn" data-target="mobile-schengen-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-eu mr-2 shadow-sm rounded-sm"></span> Schengen
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-schengen-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../countries/schengen/tourist.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Tourist</a>
+                            <a href="../countries/schengen/business.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Business</a>
+                            <a href="../countries/schengen/cruise.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- USA Mobile -->
+                    <div class="mb-4">
+                        <button class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn" data-target="mobile-usa-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-us mr-2 shadow-sm rounded-sm"></span> USA
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-usa-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../countries/usa/tourist.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Tourist</a>
+                            <a href="../countries/usa/business.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Business</a>
+                            <a href="../countries/usa/cruise.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Canada Mobile -->
+                    <div class="mb-4">
+                        <button class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn" data-target="mobile-canada-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-ca mr-2 shadow-sm rounded-sm"></span> Canada
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-canada-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../countries/canada/tourist.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Tourist</a>
+                            <a href="../countries/canada/business.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Business</a>
+                            <a href="../countries/canada/cruise.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Cruise</a>
+                        </div>
+                    </div>
+
+                    <!-- Australia Mobile -->
+                    <div class="mb-4">
+                        <button class="flex items-center justify-between w-full mb-2 font-medium text-slate-800 mobile-country-btn" data-target="mobile-australia-menu">
+                            <div class="flex items-center">
+                                <span class="flag-icon flag-icon-au mr-2 shadow-sm rounded-sm"></span> Australia
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <div id="mobile-australia-menu" class="hidden pl-8 space-y-2 border-l-2 border-slate-100 ml-1">
+                            <a href="../countries/australia/tourist.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Tourist</a>
+                            <a href="../countries/australia/business.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Business</a>
+                            <a href="../countries/australia/cruise.html" class="block text-sm text-slate-500 hover:text-[#84cc16]">Cruise</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Blogs</a>
+                <a href="../partners.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Partners</a>
+                <a href="../about.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">About</a>
+                <a href="../testimonials.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Testimonials</a>
+                <a href="../contact.html" class="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-8 tracking-wide uppercase">
+            <a href="index.html" class="hover:text-slate-600 transition-colors">Blog</a>
+            <i class="ti ti-chevron-right text-[10px]"></i>
+            <span class="text-slate-600">{{ARTICLE_HEADLINE}}</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Article Main (Left Column) -->
+            <main class="lg:col-span-8 bg-white border border-slate-100 rounded-2xl p-6 sm:p-10 shadow-sm">
+                <!-- Category/Pillar Tag -->
+                <div class="mb-4">
+                    <span class="bg-[#d1e917] text-slate-900 border border-[#bcd214] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm">
+                        {{PILLAR_BADGE}}
+                    </span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-950 leading-tight mb-4 tracking-tight">
+                    {{TITLE}}
+                </h1>
+
+                <!-- Meta Details -->
+                <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 border-b border-slate-100 pb-6 mb-8">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center font-bold text-xs">VB</div>
+                        <span class="font-medium text-slate-700">VisaBits Editorial</span>
+                    </div>
+                    <span class="w-1 h-1 rounded-full bg-slate-200"></span>
+                    <div class="flex items-center gap-1">
+                        <i class="ti ti-calendar-event"></i>
+                        <span>Published: {{DATE_PUBLISHED}}</span>
+                    </div>
+                    <span class="w-1 h-1 rounded-full bg-slate-200"></span>
+                    <div class="flex items-center gap-1">
+                        <i class="ti ti-clock"></i>
+                        <span>{{READ_TIME}}</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="w-full aspect-[16/9] bg-slate-50 border border-slate-100 rounded-xl mb-8 overflow-hidden relative shadow-sm">
+                    <img src="../images/blog/{{SLUG}}_hero.png" onerror="this.src='../images/canada_hero_salman.png';" alt="{{TITLE}}" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Content HTML -->
+                <div class="body-text">
+                    {{CONTENT_HTML}}
+                </div>
+
+                <!-- Feedback Section -->
+                <div class="border-t border-slate-100 mt-12 pt-8 text-center bg-slate-50/50 rounded-xl p-6 border">
+                    <p class="text-slate-900 font-semibold mb-4 text-base">Was this visa guide helpful?</p>
+                    <div class="flex justify-center gap-3">
+                        <a href="https://wa.me/923144152590?text=Hi+VisaBits+I+need+help+with+my+visa+documents" class="inline-flex items-center gap-2 glow-button text-slate-950 font-bold px-6 py-3 rounded-lg shadow-md">
+                            <i class="fab fa-whatsapp text-lg"></i> Yes, I Need Document Support
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sticky Sidebar (Right Column) -->
+            <aside class="lg:col-span-4 space-y-8">
+                <div class="lg:sticky lg:top-28 space-y-6">
+                    <!-- Verification Badge Card -->
+                    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-5 flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                            <i class="ti ti-shield-check text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Verified Compliance</span>
+                            <h4 class="text-sm font-semibold text-slate-900 mt-1.5"> casewriter Audited</h4>
+                            <p class="text-xs text-slate-600 mt-1">This guide is updated for the 2026 regulations and physical BRP-to-eVisa transition rules.</p>
+                        </div>
+                    </div>
+
+                    <!-- TOC & WhatsApp CTA Card (Glassmorphic) -->
+                    <div class="glass-card text-white rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute -right-12 -top-12 w-32 h-32 bg-accent-light/5 rounded-full blur-2xl"></div>
+                        <span class="text-[10px] font-bold text-[#d1e917] uppercase tracking-widest block mb-2">Free Document Assessment</span>
+                        <h3 class="text-xl font-bold mb-3 leading-snug">Avoid counter rejections at VFS / TLS</h3>
+                        <p class="text-slate-400 text-xs font-light leading-relaxed mb-6">Our expert team reviews financial standings, generates travel checklists, and books appointment slots with a 98% success rate.</p>
+                        <a href="https://wa.me/923144152590?text=Hi+VisaBits+I+need+help+with+my+visa+documents" class="w-full glow-button text-slate-950 font-bold py-3 rounded-lg text-center block text-sm shadow-lg">
+                            <i class="fab fa-whatsapp mr-1.5"></i> WhatsApp Support Now
+                        </a>
+                        <div class="text-center text-[10px] text-slate-500 mt-3 flex items-center justify-center gap-1">
+                            <i class="ti ti-clock"></i> Response within 2 hours
+                        </div>
+                    </div>
+
+                    <!-- Side Links -->
+                    <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Related Guides</h4>
+                        <div class="space-y-4">
+                            <a href="schengen-visa.html" class="group block border-b border-slate-50 pb-3 last:border-none last:pb-0">
+                                <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wide block mb-0.5">Schengen Europe</span>
+                                <h5 class="text-xs font-medium text-slate-800 group-hover:text-emerald-700 transition-colors line-clamp-1">Schengen Visa from UK — full 2026 guide</h5>
+                            </a>
+                            <a href="canada-visitor-visa-uk.html" class="group block border-b border-slate-50 pb-3 last:border-none last:pb-0">
+                                <span class="text-[9px] font-bold text-red-600 uppercase tracking-wide block mb-0.5">Canada</span>
+                                <h5 class="text-xs font-medium text-slate-800 group-hover:text-red-700 transition-colors line-clamp-1">Canada Visit Visa from UK — 10-year guide</h5>
+                            </a>
+                            <a href="usa-visitor-visa-uk.html" class="group block border-b border-slate-50 pb-3 last:border-none last:pb-0">
+                                <span class="text-[9px] font-bold text-blue-600 uppercase tracking-wide block mb-0.5">United States</span>
+                                <h5 class="text-xs font-medium text-slate-800 group-hover:text-blue-700 transition-colors line-clamp-1">US B1/B2 Visitor Visa from UK guide</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16 mt-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="../images/logo.jpg" alt="VisaBits Logo" class="h-10 w-auto opacity-90 rounded">
+                        <span class="ml-3 text-2xl font-bold tracking-tight">VisaBits</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6 text-sm">Professional visa facilitation services for UK residents. We simplify global mobility with expertise and integrity.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/visa-bits/" class="text-slate-400 hover:text-accent-neon transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575915765867" class="text-slate-400 hover:text-accent-neon transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.instagram.com/visabits/" class="text-slate-400 hover:text-accent-neon transition-colors" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../about.html" class="text-slate-400 hover:text-accent-neon transition-colors">About Us</a></li>
+                        <li><a href="../testimonials.html" class="text-slate-400 hover:text-accent-neon transition-colors">Client Success</a></li>
+                        <li><a href="../contact.html" class="text-slate-400 hover:text-accent-neon transition-colors">Contact Support</a></li>
+                        <li><a href="../privacy-policy.html" class="text-slate-400 hover:text-accent-neon transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Visa Services</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../countries/australia/tourist.html" class="text-slate-400 hover:text-accent-neon transition-colors">Australia Visas</a></li>
+                        <li><a href="../countries/usa/business.html" class="text-slate-400 hover:text-accent-neon transition-colors">USA Business Visas</a></li>
+                        <li><a href="../countries/uk/cruise.html" class="text-slate-400 hover:text-accent-neon transition-colors">UK Cruise Visas</a></li>
+                        <li><a href="../countries/schengen/tourist.html" class="text-slate-400 hover:text-accent-neon transition-colors">Schengen Visas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Contact Us</h3>
+                    <div class="space-y-4 text-sm">
+                        <p class="text-slate-400 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent-neon"></i>
+                            <a href="mailto:info@visabits.co.uk" class="hover:text-white transition-colors">info@visabits.co.uk</a>
+                        </p>
+                        <p class="text-slate-400 flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent-neon"></i>
+                            <span>London, United Kingdom<br><span class="text-xs text-slate-500">Serving clients nationwide</span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center">
+                <p class="text-slate-500 text-xs">&copy; 2026 VisaBits. All rights reserved. Registered in England &amp; Wales.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Navigation Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+            if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenuIcon.className = 'fas fa-bars text-xl text-slate-600';
+                    } else {
+                        mobileMenuIcon.className = 'fas fa-times text-xl text-slate-600';
+                    }
+                });
+            }
+
+            // Desktop Dropdown Toggle
+            const desktopBtn = document.getElementById('desktop-countries-btn');
+            const desktopMenu = document.getElementById('desktop-countries-menu');
+            const desktopIcon = document.getElementById('desktop-countries-icon');
+
+            if (desktopBtn && desktopMenu && desktopIcon) {
+                desktopBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    desktopMenu.classList.toggle('opacity-0');
+                    desktopMenu.classList.toggle('invisible');
+                    desktopIcon.classList.toggle('rotate-180');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!desktopBtn.contains(e.target) && !desktopMenu.contains(e.target)) {
+                        desktopMenu.classList.add('opacity-0');
+                        desktopMenu.classList.add('invisible');
+                        desktopIcon.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Mobile Accordion Toggle
+            const mobileCountryBtns = document.querySelectorAll('.mobile-country-btn');
+            mobileCountryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetMenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.fa-chevron-down');
+
+                    if (targetMenu) {
+                        targetMenu.classList.toggle('hidden');
+                        if (icon) {
+                            icon.classList.toggle('rotate-180');
+                        }
+                    }
+                });
+            });
+
+            // Interactive checklist functionality
+            const checklistItems = document.querySelectorAll('.checklist li');
+            checklistItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                });
+            });
+
+            // Scroll progress bar indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        });
+    </script>
+</body>
+</html>
